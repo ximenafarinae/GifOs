@@ -23,15 +23,49 @@
                 <button class="special">Mis Guifos</button>
             </div>
         </div>
-        <div class="search">
-            <p>Buscar</p>
-            <input type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-            <button>Buscar</button>
-        </div>
+
     </header>
 
-    <section class="sugestions">
+    <section>
+        <div class="search">
+            <p>Buscar</p>
+            <input id="searchInput" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+            <button onclick="search()">Buscar</button>
+            <div id="searchResults"></div>
+        </div>
+    </section>
 
+    <section class="sugestions">
+        
+        <h4>Hoy te sugerimos:</h4>
+
+        <div id="trend" class="wrapper">
+
+            <div class="one">
+                <figure>
+                    <img src="/img/similGif.jpg" alt="">
+                </figure>
+            </div>
+
+            <div class="two">
+                <figure>
+                    <img src="/img/similGif.jpg" alt="">
+                </figure>
+            </div>
+
+            <div class="three">
+                <figure>
+                    <img src="/img/similGif.jpg" alt="">
+                </figure>
+            </div>
+
+            <div class="four">
+                <figure>
+                    <img src="/img/similGif.jpg" alt="">
+                </figure>
+            </div>
+
+        </div>
     </section>
 
 
@@ -39,7 +73,7 @@
 
     </section>
 
-    <script src="js/index.js" type=""></script>
+    <script src="/js/index.js" type=""></script>
 </body>
 
 </html>

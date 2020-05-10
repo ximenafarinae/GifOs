@@ -2,11 +2,6 @@
     box-sizing: border-box;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-}
-
 $color-button: #f7c9f3;
 
 .bar {
@@ -39,6 +34,7 @@ $color-button: #f7c9f3;
         background-color: #ffffff;
         margin-left: 16.5px;
         margin-right: 140.5px;
+        box-shadow: none;
     }
 }
 .search {
@@ -54,4 +50,18 @@ $color-button: #f7c9f3;
         width: 90%;
         margin-left: 15px;
     }
+}
+
+.sugestions h4 {
+    display: flex;
+    margin: 64px 140px 19px 100px;
+    width: 1200px;
+    background: #fffafe;
+    border: 1px solid #e6bbe2;
+    box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
 }
