@@ -7,6 +7,10 @@ $color-button: #f7c9f3;
 .bar {
     background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
     box-shadow: 0 1px 0 0 #110038;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 12px;
+    color: #ffffff;
+    
 }
 .button_bar {
     display: flex;
@@ -37,6 +41,7 @@ $color-button: #f7c9f3;
         box-shadow: none;
     }
 }
+
 .search {
     width: 1200px;
     background-color: #e6e6e6;
@@ -52,8 +57,24 @@ $color-button: #f7c9f3;
     }
 }
 
-.sugestions h4 {
+.wrapperSugestions {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+        div {
+            justify-content: center;
+        }
+            figure {
+                width: 280px;
+                margin: 10px;
+                padding: 0px;
+            }
+}
+
+.sectionTitle {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 14px;
     display: flex;
+    padding: 7px;
     margin: 64px 140px 19px 100px;
     width: 1200px;
     background: #fffafe;
@@ -61,7 +82,8 @@ $color-button: #f7c9f3;
     box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
 }
 
-.wrapper {
+.wrapperTrend {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 33% 33% 33%;
 }
