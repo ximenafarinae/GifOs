@@ -2,6 +2,27 @@ const apiKey = "mbqOaa1Di4W2ZDeaGsjK5COdrFxzvWSL";
 const trendingUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=4`;
 const searchUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}`;
 
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function dropBtn() {
+    document.getElementById("themes").classList.toggle("show");
+  }
+  
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.goDown')) {
+      var dropdowns = document.getElementsByClassName("themeSelector");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
 function search() {
     let searchValue = document.getElementById("searchInput").value;
     fetch(searchUrl + "&q=" + searchValue)

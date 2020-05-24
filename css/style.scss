@@ -13,7 +13,19 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
     font-size: 12px;
     color: #ffffff;
 }
-
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
 .button_bar {
     display: flex;
     justify-content: space-between;
@@ -41,6 +53,9 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
         margin-left: 16.5px;
         margin-right: 140.5px;
         box-shadow: none;
+        span {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -85,7 +100,6 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
     column-gap: 20px;
     row-gap: 11px;
     justify-content: center;
-
 }
 
 .gifFrame {
@@ -150,5 +164,4 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
         width: 288px;
         height: 298px;
     }
-
 }
