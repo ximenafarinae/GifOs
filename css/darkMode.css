@@ -25,14 +25,9 @@ body {
 
 .wrapperSugestions {
   display: grid;
-  grid-template-columns: 20% 20% 20% 20%;
-  column-gap: 20px;
+  grid-template-columns: repeat(4, 21%);
+  gap: 20px 20px;
   justify-content: center; }
-
-.span {
-  grid-column: span 2;
-  grid-column-start: span 2;
-  grid-column-end: auto; }
 
 .sectionTitle {
   font-family: "Chakra Petch", sans-serif;
@@ -47,10 +42,9 @@ body {
 
 .wrapperTrend {
   display: grid;
-  grid-template-columns: 20% 20% 20% 20%;
+  grid-template-columns: repeat(4, 21%);
   grid-template-rows: 33% 33% 33%;
-  column-gap: 20px;
-  row-gap: 11px;
+  gap: 10px 20px;
   justify-content: center; }
 
 .gifFrame {
@@ -105,7 +99,12 @@ body {
     margin: 0px;
     z-index: 2; }
   .gifTrend img {
-    width: 288px;
     height: 298px; }
+
+.span {
+  width: 560px;
+  grid-column: span 2;
+  grid-column-start: span 2;
+  grid-column-end: auto; }
 
 /*# sourceMappingURL=darkMode.css.map */

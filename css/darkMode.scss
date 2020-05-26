@@ -17,8 +17,6 @@ $gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
     color: #ffffff;
 }
 
-
-
 .search {
     width: 1200px;
     background-color: #e6e6e6;
@@ -36,15 +34,9 @@ $gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
 
 .wrapperSugestions {
     display: grid;
-    grid-template-columns: 20% 20% 20% 20%;
-    column-gap: 20px;
+    grid-template-columns: repeat(4, 21%);
+    gap: 20px 20px;
     justify-content: center;
-}
-
-.span {
-    grid-column: span 2;
-    grid-column-start: span 2;
-    grid-column-end: auto;
 }
 
 .sectionTitle {
@@ -61,10 +53,9 @@ $gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
 
 .wrapperTrend {
     display: grid;
-    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-columns: repeat(4, 21%);
     grid-template-rows: 33% 33% 33%;
-    column-gap: 20px;
-    row-gap: 11px;
+    gap: 10px 20px;
     justify-content: center;
 }
 
@@ -127,7 +118,13 @@ $gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
         z-index: 2;
     }
     img {
-        width: 288px;
         height: 298px;
     }
+}
+
+.span {
+    width: 560px;
+    grid-column: span 2;
+    grid-column-start: span 2;
+    grid-column-end: auto;
 }

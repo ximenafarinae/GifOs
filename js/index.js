@@ -23,6 +23,8 @@ function dropBtn() {
     }
   }
 
+ 
+
 function search() {
     let searchValue = document.getElementById("searchInput").value;
     fetch(searchUrl + "&q=" + searchValue)
@@ -47,5 +49,6 @@ function search() {
     })
 
     .catch(error => console.log(error)); */
+
 
 

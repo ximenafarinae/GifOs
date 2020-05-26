@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dropdownDay.css">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
     <title>GifOs</title>
 </head>
@@ -15,16 +16,27 @@
         <div class="bar">
             ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803
         </div>
+
         <div class="button_bar">
-            <img src="img/gifOF_logo.png" alt="Logo GifOs">
+
+            <img src="assets/gifOF_logo.png" alt="Logo GifOs">
             <div>
                 <button>Crear Guifos</button>
-                <button>Elegir tema</button>
-                <button class="dropdown">▼</button>
-                <a class="dropdown-content">Sailor Day</a>
-                <a class="dropdown-content">Sailor Nigth</a>
+
+                <div class="dropdown">
+                    <button onclick="dropBtn()">Elegir tema</button>
+                    <button onclick="dropBtn()" class="goDown">▼</button>
+                    <div id="themes" class="themeSelector">
+                        <a href="index.html" class="day"><span>S</span>ailor Day</a>
+                        <a href="darkMode.html" class="nigth"><span>S</span>ailor Nigth</a>
+                    </div>
+
+                </div>
+
                 <button class="special"> <span>M</span>is Guifos</button>
+
             </div>
+
         </div>
 
     </header>
@@ -33,7 +45,7 @@
         <div class="search">
             <p>Buscar</p>
             <input id="searchInput" type="text" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-            <button onclick="search()">Buscar</button>
+            <button onclick="search()"> <img src="/assets/lupa_inactive.svg" alt="" srcset=""> Buscar</button>
             <div id="searchResults"></div>
         </div>
     </section>
@@ -50,9 +62,9 @@
                     <img src="/assets/button3.svg" alt="" srcset="">
                     <button>Ver más...</button>
                     <img src="/img/similGif.jpg" alt="">
-                    
+
                 </figure>
-                
+
             </div>
 
             <div class="gifFrame">
