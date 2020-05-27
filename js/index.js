@@ -1,9 +1,10 @@
 const apiKey = "mbqOaa1Di4W2ZDeaGsjK5COdrFxzvWSL";
-const trendingUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=4`;
+const trendingUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=10`;
 const searchUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}`;
 const randomUrl = `http://api.giphy.com/v1/gifs/random?api_key=${apiKey}`;
 
 document.body.onload = getRandoms();
+
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function dropBtn() {
@@ -71,29 +72,25 @@ function getRandoms() {
 }
 
 function getTrends() {
-
-  for (let index = 0; index < 4; index++) {
-    fetch(randomUrl)
+    fetch(trendingUrl)
       .then(response => response.json())
       .then(json => {
-        let container = document.getElementById("sugest")
+        console.log(json)
+        json.data.forEach(result => {
+        let container = document.getElementById("trends")
         let addDiv = document.createElement("div")
-        addDiv.className += "gifFrame"
+        addDiv.className += "gifTrend"
         let addFigure = document.createElement("figure")
         let addFigCaption = document.createElement("figcaption")
         let addImg = document.createElement("img") //`<img src="" alt="">`
-        addImg.src = `${json.data.images.preview_gif.url}`
-        let addButton = document.createElement("button")
+        addImg.src = `${result.images.original_still.url}`
         container.appendChild(addDiv)
         addDiv.appendChild(addFigure)
         addFigure.appendChild(addFigCaption)
         addFigure.appendChild(addImg)
-        addFigure.appendChild(addButton)
-
+        });
+        
       });
-
-
-  }
 
 }
 

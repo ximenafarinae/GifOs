@@ -97,6 +97,9 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
         margin-top: 3px;
         margin-bottom: 2px;
         background-image: $gradient;
+        font-family: $fontFamily;
+        color: #ffffff;
+        font-size: 14px;
     }
     figure {
         width: 286px;
@@ -118,6 +121,7 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
     button {
         font-family: $fontFamily;
         font-size: 14px;
+        color: #ffffff;
         background-color: #4180f6;
         border: 1px solid #4c2f99;
         box-shadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
