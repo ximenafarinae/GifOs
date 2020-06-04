@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
 }
-body {
+.bodyDark {
     background-color: #110038;
 }
 
@@ -9,7 +9,7 @@ $color-button: #f7c9f3;
 $fontFamily: "Chakra Petch", sans-serif;
 $gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
 
-.bar {
+.barDark {
     background-image: $gradient;
     box-shadow: 0 1px 0 0 #110038;
     font-family: $fontFamily;
@@ -17,29 +17,29 @@ $gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
     color: #ffffff;
 }
 
-.search {
+.searchDark {
     width: 1200px;
     background-color: #e6e6e6;
     padding-bottom: 12px;
     margin-left: 100px;
     margin-right: 140px;
-    p {
+    .pDark {
         background-image: $gradient;
     }
-    input {
+    .inputDark {
         width: 90%;
         margin-left: 15px;
     }
 }
 
-.wrapperSugestions {
+.wrapperSugestionsDark {
     display: grid;
     grid-template-columns: repeat(4, 21%);
     gap: 20px 20px;
     justify-content: center;
 }
 
-.sectionTitle {
+.sectionTitleDark {
     font-family: $fontFamily;
     font-size: 14px;
     display: flex;
@@ -51,7 +51,7 @@ $gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
     box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
 }
 
-.wrapperTrend {
+.wrapperTrendDark {
     display: grid;
     grid-template-columns: repeat(4, 21%);
     grid-template-rows: 33% 33% 33%;
@@ -59,7 +59,7 @@ $gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
     justify-content: center;
 }
 
-.gifFrame {
+.gifFrameDark {
     display: flex;
     justify-content: center;
     width: 288px;
@@ -105,7 +105,7 @@ $gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
         z-index: 4;
     }
 }
-.gifTrend {
+.gifTrendDark {
     display: flex;
     justify-content: center;
     width: 286px;
@@ -122,7 +122,7 @@ $gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
     }
 }
 
-.span {
+.spanDark {
     width: 560px;
     grid-column: span 2;
     grid-column-start: span 2;

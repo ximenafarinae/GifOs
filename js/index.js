@@ -3,7 +3,7 @@ const trendingUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&li
 const searchUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}`;
 const randomUrl = `http://api.giphy.com/v1/gifs/random?api_key=${apiKey}`;
 
-document.body.onload = getRandoms();
+
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
@@ -26,7 +26,7 @@ window.onclick = function (event) {
 }
 
 
-
+//Esta funcion permite realizar la busqueda desde la barra
 function search() {
   let searchValue = document.getElementById("searchInput").value;
   fetch(searchUrl + "&q=" + searchValue)
@@ -42,8 +42,9 @@ function search() {
     })
 }
 
-function getRandoms() {
 
+//Esta funcion trae los gifs a la seccion hoy te sugerimos
+function getRandoms() {
   for (let index = 0; index < 4; index++) {
     fetch(randomUrl)
       .then(response => response.json())
@@ -54,7 +55,7 @@ function getRandoms() {
         let addFigure = document.createElement("figure")
         let addFigCaption = document.createElement("figcaption")
         addFigCaption.innerHTML = `#${`${json.data.title}`}`
-        let addImg = document.createElement("img") 
+        let addImg = document.createElement("img")
         addImg.src = `${json.data.images.preview_gif.url}`
         let addButton = document.createElement("button")
         addButton.innerHTML = "Ver más..."
@@ -71,29 +72,60 @@ function getRandoms() {
 
 }
 
+//Esta funcion trae los gifs a la seccion tendencias.
 function getTrends() {
-    fetch(trendingUrl)
-      .then(response => response.json())
-      .then(json => {
-        console.log(json)
-        json.data.forEach(result => {
+  fetch(trendingUrl)
+    .then(response => response.json())
+    .then(json => {
+      let trends = []
+      trends = json.data
+      console.log(trends)
+      json.data.forEach(result => {
         let container = document.getElementById("trends")
         let addDiv = document.createElement("div")
         addDiv.className += "gifTrend"
         let addFigure = document.createElement("figure")
         let addFigCaption = document.createElement("figcaption")
         let addImg = document.createElement("img") //`<img src="" alt="">`
-        addImg.src = `${result.images.original_still.url}`
+        addImg.src = `${result.images.preview_gif.url}`
         container.appendChild(addDiv)
         addDiv.appendChild(addFigure)
         addFigure.appendChild(addFigCaption)
         addFigure.appendChild(addImg)
-        });
-        
       });
+
+    });
+
+
 
 }
 
+//Esta funcion permite hacer el cambio a modo oscuro
+
+
+function darkMode() {
+  let barDark = document.getElementById('bar')
+  barDark.classList.remove('bar')
+  barDark.className += "barDark"
+  let bodyDark = document.getElementById('body')
+  bodyDark.className += "bodyDark"
+  let logoDark = document.getElementById('logo')
+  logoDark.src = 'assets/gifOF_logo_dark.png'
+  let searchDark = document.getElementById('search')
+  searchDark.className += "searchDark"
+  let pDark = document.getElementById('pDark')
+  pDark.className += "pDark"
+  let inputDark = document.getElementById('searchInput')
+  inputDark.className += "searchDark"
+
+}
+
+
+//Esta funcion llama a las funciones que contiene una vez que se carga el html
+(function () {
+  getRandoms()
+  getTrends()
+})();
 
 
 

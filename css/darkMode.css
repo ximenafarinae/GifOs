@@ -1,35 +1,35 @@
 * {
   box-sizing: border-box; }
 
-body {
+.bodyDark {
   background-color: #110038; }
 
-.bar {
+.barDark {
   background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
   box-shadow: 0 1px 0 0 #110038;
   font-family: "Chakra Petch", sans-serif;
   font-size: 12px;
   color: #ffffff; }
 
-.search {
+.searchDark {
   width: 1200px;
   background-color: #e6e6e6;
   padding-bottom: 12px;
   margin-left: 100px;
   margin-right: 140px; }
-  .search p {
+  .searchDark .pDark {
     background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%); }
-  .search input {
+  .searchDark .inputDark {
     width: 90%;
     margin-left: 15px; }
 
-.wrapperSugestions {
+.wrapperSugestionsDark {
   display: grid;
   grid-template-columns: repeat(4, 21%);
   gap: 20px 20px;
   justify-content: center; }
 
-.sectionTitle {
+.sectionTitleDark {
   font-family: "Chakra Petch", sans-serif;
   font-size: 14px;
   display: flex;
@@ -40,14 +40,14 @@ body {
   border: 1px solid #e6bbe2;
   box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d; }
 
-.wrapperTrend {
+.wrapperTrendDark {
   display: grid;
   grid-template-columns: repeat(4, 21%);
   grid-template-rows: 33% 33% 33%;
   gap: 10px 20px;
   justify-content: center; }
 
-.gifFrame {
+.gifFrameDark {
   display: flex;
   justify-content: center;
   width: 288px;
@@ -56,25 +56,25 @@ body {
   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
   position: relative;
   z-index: 1; }
-  .gifFrame figcaption {
+  .gifFrameDark figcaption {
     width: 280px;
     height: 24px;
     margin-top: 3px;
     margin-bottom: 2px;
     background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%); }
-  .gifFrame figure {
+  .gifFrameDark figure {
     margin: 0px;
     position: absolute;
     z-index: 2; }
-  .gifFrame img {
+  .gifFrameDark img {
     width: 280px;
     height: 280px;
     position: absolute;
     z-index: 3; }
-  .gifFrame .close {
+  .gifFrameDark .close {
     width: 16px;
     height: 14px; }
-  .gifFrame button {
+  .gifFrameDark button {
     font-family: "Chakra Petch", sans-serif;
     font-size: 14px;
     background-color: #4180f6;
@@ -87,7 +87,7 @@ body {
     margin-left: 11px;
     z-index: 4; }
 
-.gifTrend {
+.gifTrendDark {
   display: flex;
   justify-content: center;
   width: 286px;
@@ -95,13 +95,13 @@ body {
   background: #e6e6e6;
   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
   z-index: 1; }
-  .gifTrend figure {
+  .gifTrendDark figure {
     margin: 0px;
     z-index: 2; }
-  .gifTrend img {
+  .gifTrendDark img {
     height: 298px; }
 
-.span {
+.spanDark {
   width: 560px;
   grid-column: span 2;
   grid-column-start: span 2;

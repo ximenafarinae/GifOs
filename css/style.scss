@@ -147,11 +147,15 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
         margin: 0px;
         z-index: 2;
     }
+    img{
+        width: 286px;
+        height: 298px; 
+    }
 }
 .span {
     width: 582px;
-    grid-column: span 2;
-    grid-column-start: span 2;
+    grid-column: 1/2;
+    grid-column-start: 1;
     grid-column-end: auto;
     img {
         width: 582px;
