@@ -111,12 +111,13 @@ function darkMode() {
   bodyDark.className += "bodyDark"
   let logoDark = document.getElementById('logo')
   logoDark.src = 'assets/gifOF_logo_dark.png'
-  let searchDark = document.getElementById('search')
-  searchDark.className += "searchDark"
+  let divSearchDark = document.getElementById('search')
+  divSearchDark.classList.remove('search')
+  divSearchDark.className += "searchDark"
   let pDark = document.getElementById('pDark')
   pDark.className += "pDark"
   let inputDark = document.getElementById('searchInput')
-  inputDark.className += "searchDark"
+  inputDark.className += "inputDark"
 
 }
 

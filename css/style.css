@@ -30,7 +30,7 @@
   .search img {
     width: 16px;
     height: 16px;
-    padding: 10px; }
+    margin-right: 4px; }
   .search button {
     grid-row: 2;
     width: 102px;
