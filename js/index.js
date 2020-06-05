@@ -25,6 +25,10 @@ window.onclick = function (event) {
   }
 }
 
+//Hacer una funcion que me traiga las sugerencias de busqueda
+function  searchSuggestions(){
+
+}
 
 //Esta funcion permite realizar la busqueda desde la barra
 function search() {
@@ -40,6 +44,7 @@ function search() {
       });
       searchResults.innerHTML = html;
     })
+    .catch(error => console.log(error))
 }
 
 
@@ -65,7 +70,9 @@ function getRandoms() {
         addFigure.appendChild(addImg)
         addFigure.appendChild(addButton)
 
-      });
+      })
+
+      .catch(error => console.log(error))
 
 
   }
@@ -93,16 +100,11 @@ function getTrends() {
         addFigure.appendChild(addFigCaption)
         addFigure.appendChild(addImg)
       });
-
-    });
-
-
-
+    })
+    .catch(error => console.log(error))
 }
 
 //Esta funcion permite hacer el cambio a modo oscuro
-
-
 function darkMode() {
   let barDark = document.getElementById('bar')
   barDark.classList.remove('bar')

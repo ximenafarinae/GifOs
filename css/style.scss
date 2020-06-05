@@ -31,9 +31,17 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
         background-image: $gradient;
     }
     input {
+        background: #ffffff;
+        border: 1px solid #979797;
+        box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
         margin-left: 15px;
         grid-row: 2;
         width: 98%;
+    }
+    input:active {
+        background: #ffffff;
+        border: 1px solid #979797;
+        box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
     }
     img {
         width: 16px;
@@ -147,9 +155,9 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
         margin: 0px;
         z-index: 2;
     }
-    img{
+    img {
         width: 286px;
-        height: 298px; 
+        height: 298px;
     }
 }
 .span {
