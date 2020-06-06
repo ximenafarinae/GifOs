@@ -23,7 +23,7 @@
   width: 1200px;
   background-color: #e6e6e6;
   padding-bottom: 12px;
-  margin-left: 100px;
+  margin-left: 75px;
   margin-right: 130px;
   margin-top: 16px;
 }
@@ -73,11 +73,11 @@
 .wrapperSugestions {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (21%)[4];
-      grid-template-columns: repeat(4, 21%);
-  -webkit-column-gap: 20px;
-          column-gap: 20px;
-  row-gap: 20px;
+  -ms-grid-columns: (288px)[4];
+      grid-template-columns: repeat(4, 288px);
+  -ms-grid-rows: (313px)[1];
+      grid-template-rows: repeat(1, 313px);
+  gap: 16px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -89,9 +89,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  justify-self: center;
   padding: 7px;
-  margin: 64px 140px 19px 100px;
-  width: 1200px;
+  margin: 64px auto 19px 75px;
+  width: 1195px;
   background: #fffafe;
   border: 1px solid #e6bbe2;
   -webkit-box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
@@ -101,13 +102,11 @@
 .wrapperTrend {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (21%)[4];
-      grid-template-columns: repeat(4, 21%);
-  -ms-grid-rows: (32%)[3];
-      grid-template-rows: repeat(3, 32%);
-  -webkit-column-gap: 16px;
-          column-gap: 16px;
-  row-gap: 16px;
+  -ms-grid-columns: (286px)[4];
+      grid-template-columns: repeat(4, 286px);
+  -ms-grid-rows: (298px)[3];
+      grid-template-rows: repeat(3, 298px);
+  gap: 16px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -178,6 +177,19 @@
   z-index: 4;
 }
 
+.trending {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .gifTrend {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -220,5 +232,34 @@
 
 .span figure {
   width: 582px;
+}
+
+.sectionMisGuifos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapperMyGifs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (288px)[4];
+      grid-template-columns: repeat(4, 288px);
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  gap: 16px;
+}
+
+.myGifos {
+  width: 280px;
+  height: 280px;
+  background-color: #80687d;
 }
 /*# sourceMappingURL=style.css.map */

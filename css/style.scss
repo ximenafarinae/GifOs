@@ -22,7 +22,7 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
     width: 1200px;
     background-color: #e6e6e6;
     padding-bottom: 12px;
-    margin-left: 100px;
+    margin-left: 75px;
     margin-right: 130px;
     margin-top: 16px;
     p {
@@ -60,9 +60,9 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
 
 .wrapperSugestions {
     display: grid;
-    grid-template-columns: repeat(4, 21%);
-    column-gap: 20px;
-    row-gap: 20px;
+    grid-template-columns: repeat(4, 288px);
+    grid-template-rows: repeat(1, 313px);
+    gap: 16px;
     justify-content: center;
 }
 
@@ -70,9 +70,10 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
     font-family: $fontFamily;
     font-size: 14px;
     display: flex;
+    justify-self: center;
     padding: 7px;
-    margin: 64px 140px 19px 100px;
-    width: 1200px;
+    margin: 64px auto 19px 75px;
+    width: 1195px;
     background: #fffafe;
     border: 1px solid #e6bbe2;
     box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
@@ -80,11 +81,9 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
 
 .wrapperTrend {
     display: grid;
-    grid-template-columns: repeat(4, 21%);
-    grid-template-rows: repeat(3, 32%);
-    column-gap: 16px;
-    row-gap: 16px;
-
+    grid-template-columns: repeat(4, 286px);
+    grid-template-rows: repeat(3, 298px);
+    gap: 16px;
     justify-content: center;
 }
 
@@ -141,6 +140,12 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
         z-index: 4;
     }
 }
+.trending{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .gifTrend {
     display: flex;
     justify-content: end;
@@ -171,4 +176,21 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
     figure {
         width: 582px;
     }
+}.sectionMisGuifos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+
+ .wrapperMyGifs{
+     display: grid;
+     grid-template-columns: repeat(4, 288px);
+     grid-template-rows: auto;
+     gap: 16px;
+ }
+ .myGifos{
+     width: 280px;
+     height: 280px;
+     background-color: #80687d;
+ }
