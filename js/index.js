@@ -5,38 +5,35 @@ const randomUrl = `http://api.giphy.com/v1/gifs/random?api_key=${apiKey}`;
 const searchSuggestionsUrl = `http://api.giphy.com/v1/tags/related/`;
 
 
-
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function dropBtn() {
   document.getElementById("themes").classList.toggle("show");
 }
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function (event) {
-  if (!event.target.matches('.goDown')) {
-    var dropdowns = document.getElementsByClassName("themeSelector");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-
 //Hacer una funcion que muestre la barra de sugerencias de busqueda
+function showSuggestions() {
+  let content = document.getElementById('searchInput').value
+  if (content != "") {
+    document.getElementById('showSearchSuggestions').style.display = "block"
+    document.getElementById('searchSuggestions').style.display = "grid"
+  } else {
+    document.getElementById('showSearchSuggestions').style.display = "none"
+    document.getElementById('searchSuggestions').style.display = "none"
+  }
 
+}
 
 //Hacer una funcion que me traiga las sugerencias de busqueda
 function searchSuggestions() {
   let term = document.getElementById('searchInput').value
+  if (term === "") {
+    return
+  }
   fetch(searchSuggestionsUrl + term + `?api_key=${apiKey}`)
 
     .then(response => response.json())
     .then(json => {
-
       let sectionSearch = document.getElementById('sectionSearch')
       let searchSuggestions = document.getElementById('searchSuggestions')
       searchSuggestions.innerHTML = ""
@@ -74,6 +71,7 @@ function search() {
 
 
 //Esta funcion trae los gifs a la seccion hoy te sugerimos
+
 function getRandoms() {
   for (let index = 0; index < 4; index++) {
     fetch(randomUrl)
@@ -111,7 +109,8 @@ function getTrends() {
     .then(json => {
       let trends = []
       trends = json.data
-      json.data.forEach(result => {
+      for (let index = 0; index < trends.length; index++) {
+        const result = trends[index];
         let container = document.getElementById("trends")
         let addDiv = document.createElement("div")
         addDiv.className += "gifTrend"
@@ -123,10 +122,17 @@ function getTrends() {
         addDiv.appendChild(addFigure)
         addFigure.appendChild(addFigCaption)
         addFigure.appendChild(addImg)
-      });
+        if ((index +1) % 5 === 0 ) {
+          addDiv.classList.add('wideGif')
+        }
+      }
+
     })
     .catch(error => console.log(error))
+
+
 }
+
 
 //Esta funcion permite hacer el cambio a modo oscuro
 function darkMode() {
@@ -147,11 +153,34 @@ function darkMode() {
 
 }
 
+function initEvents() {
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function (event) {
+    if (!event.target.matches('.goDown')) {
+      var dropdowns = document.getElementsByClassName("themeSelector");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
+  var input = document.getElementById("searchInput");
+  input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+      search()
+    }
+  });
+}
 
 //Esta funcion llama a las funciones que contiene una vez que se carga el html
 (function () {
   getRandoms()
   getTrends()
+  initEvents()
 })();
 
 

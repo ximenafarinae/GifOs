@@ -47,13 +47,21 @@
     <section id="sectionSearch">
         <div id="search" class="search">
             <p id="pDark">Buscar</p>
-            <input id="searchInput" onkeyup="searchSuggestions()" type="text"
+            <input id="searchInput" onInput = "showSuggestions()" onkeyup="searchSuggestions()" type="text"
                 placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-            <button onclick="search()"> <img src="/assets/lupa_inactive.svg"><span>Buscar</span></button>
+            <button id = "btnSearch" onclick="search()"> <img src="/assets/lupa_inactive.svg"><span>Buscar</span></button>
             <div id="searchResults"></div>
         </div>
-        
-        <div id="searchSuggestions"></div>
+
+        <div id="showSearchSuggestions">
+            <div id="searchSuggestions"></div>
+        </div>
+        <div id="showHashtags">
+            <div><span>#</span></div>
+            <div><span></span></div>
+            <div><span></span></div>
+        </div>
+
 
 
     </section>
@@ -72,6 +80,13 @@
     <section class="trending">
         <h4 class="sectionTitle">Tendencias</h4>
         <div id="trends" class="wrapperTrend">
+
+        </div>
+    </section>
+
+    <section class="results">
+        <h4 class="sectionTitle">Resultados de la busqueda:</h4>
+        <div id="searchResults" class="wrapperTrend">
 
         </div>
     </section>

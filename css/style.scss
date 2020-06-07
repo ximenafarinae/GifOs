@@ -6,7 +6,6 @@ $color-button: #f7c9f3;
 $fontFamily: "Chakra Petch", sans-serif;
 $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
 @import "dropdownDay";
-@import "createGuifos";
 
 .bar {
     background-image: $gradient;
@@ -71,7 +70,7 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
 }
 
 #searchSuggestions {
-    display: grid;
+    display: none;
     gap: 10px;
     width: 1200px;
     height: 160px;
@@ -89,6 +88,34 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
         background: #dbdbdb;
         border: 1px solid #808080;
         box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+    }
+}
+#showSearchSuggestions {
+    display: none;
+}
+#showHashtags {
+    display: none;
+    grid-template-columns: repeat(3, 100px);
+    gap: 8px;
+    margin-top: 8px;
+    margin-left: 75px;
+    div {
+        display: flex;
+        flex-direction: row;
+        width: 100px;
+        height: 34px;
+        background-color: #4180f6;
+        border: 1px solid #4c2f99;
+        box-shadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
+        span {
+            font-family: "Chakra Petch", sans-serif;
+            font-size: 14px;
+            color: #ffffff;
+            letter-spacing: 0;
+            line-height: 18px;
+            justify-self: center;
+            align-self: center;
+        }
     }
 }
 
@@ -199,11 +226,9 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
         height: 298px;
     }
 }
-.span {
+.wideGif {
     width: 582px;
-    grid-column: 1/2;
-    grid-column-start: 1;
-    grid-column-end: auto;
+    grid-column: span 2;
     img {
         width: 582px;
     }
@@ -211,6 +236,16 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
         width: 582px;
     }
 }
+// .span {
+//     width: 582px;
+//     grid-column: 1/3;
+//     img {
+//         width: 582px;
+//     }
+//     figure {
+//         width: 582px;
+//     }
+// }
 .sectionMisGuifos {
     display: flex;
     flex-direction: column;
@@ -229,4 +264,128 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
     background-color: #80687d;
 }
 
-
+.createGif {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: 10% 15%;
+    width: 684px;
+    height: 386px;
+    background-color: #e6e6e6;
+    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+    .titleBar {
+        justify-self: start;
+        background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+        margin-top: 1px;
+        margin-left: 3px;
+        padding-left: 7px;
+        padding-top: 6.4px;
+        width: 678px;
+        height: 24px;
+        p {
+            margin: 0px;
+            font-family: "Chakra Petch";
+            font-weight: bold;
+            font-size: 14px;
+            color: #ffffff;
+            letter-spacing: 0;
+        }
+    }
+}
+.instructionsTitle {
+    img {
+        width: 32px;
+        height: 32px;
+        margin-left: 25px;
+        margin-right: 16px;
+        margin-top: 10px;
+    }
+    display: inline-flex;
+    h3 {
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        color: #110038;
+        letter-spacing: 0;
+        line-height: 22px;
+    }
+}
+.instructions {
+    width: 518px;
+    height: 190px;
+    display: grid;
+    grid-template-rows: auto;
+    margin-right: 93px;
+    margin-left: 73px;
+    h6 {
+        margin: 0px;
+        font-family: "Chakra Petch";
+        font-weight: normal;
+        font-size: 14px;
+        color: #110038;
+        letter-spacing: 0;
+        line-height: 20px;
+    }
+    span {
+        font-weight: bold;
+    }
+    .italic {
+        font-style: italic;
+    }
+}
+.createBtnBar {
+    display: grid;
+    grid-template-columns: repeat(3, 228px);
+    gap: 16px;
+    .button {
+        font-family: $fontFamily;
+        width: 131px;
+        height: 36px;
+        margin: 44px 0 0 16px;
+        background-color: $color-button;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+    }
+    .btnCreateGifsCancell {
+        justify-self: end;
+        align-self: center;
+        width: 144px;
+        height: 36px;
+        grid-column: 2/3;
+        background: #fff4fd;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+        font-family: $fontFamily;
+    }
+    .btnCreateGifsStart {
+        justify-self: start;
+        align-self: center;
+        width: 144px;
+        height: 36px;
+        grid-column: 3/4;
+        background: #f7c9f3;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+        font-family: $fontFamily;
+    }
+}
+#createHeader {
+    #arrow {
+        margin-left: 60px;
+        margin-top: 55px;
+        width: 24px;
+        height: 24px;
+        grid-column: 1/2;
+    }
+    #logo {
+        margin-top: 35px;
+        margin-bottom: 75px;
+        width: 102.6px;
+        height: 64px;
+        grid-column: 2/3;
+    }
+    div {
+        display: grid;
+        grid-template-columns: 6.5% 10%;
+        gap: 7px;
+    }
+}
