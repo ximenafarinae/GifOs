@@ -1,0 +1,28 @@
+.createGif {
+    display: grid;
+    width: 684px;
+    height: 386px;
+    background-color: #e6e6e6;
+    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+    .titleBar {
+        justify-self: start;
+        background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+        margin-top: 1px;
+        margin-left: 3px;
+        padding-left: 7px;
+        padding-top: 6.4px;
+        width: 678px;
+        height: 24px;
+        p {
+            margin: 0px;
+            font-family: "Chakra Petch";
+            font-weight: bold;
+            font-size: 14px;
+            color: #ffffff;
+            letter-spacing: 0;
+        }
+        div{
+            display:inline-flex;
+        }
+    }
+}

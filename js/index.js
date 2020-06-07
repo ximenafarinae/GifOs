@@ -2,6 +2,7 @@ const apiKey = "mbqOaa1Di4W2ZDeaGsjK5COdrFxzvWSL";
 const trendingUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=10`;
 const searchUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}`;
 const randomUrl = `http://api.giphy.com/v1/gifs/random?api_key=${apiKey}`;
+const searchSuggestionsUrl = `http://api.giphy.com/v1/tags/related/`;
 
 
 
@@ -25,8 +26,32 @@ window.onclick = function (event) {
   }
 }
 
+//Hacer una funcion que muestre la barra de sugerencias de busqueda
+
+
 //Hacer una funcion que me traiga las sugerencias de busqueda
-function  searchSuggestions(){
+function searchSuggestions() {
+  let term = document.getElementById('searchInput').value
+  fetch(searchSuggestionsUrl + term + `?api_key=${apiKey}`)
+
+    .then(response => response.json())
+    .then(json => {
+
+      let sectionSearch = document.getElementById('sectionSearch')
+      let searchSuggestions = document.getElementById('searchSuggestions')
+      searchSuggestions.innerHTML = ""
+      sectionSearch.appendChild(searchSuggestions)
+      let resultLength = Math.min(3, json.data.length)
+
+      for (i = 0; i < resultLength; i++) {
+        let result = document.createElement('div')
+        let resultName = document.createElement('p')
+        result.appendChild(resultName)
+        resultName.innerHTML = json.data[i].name
+        searchSuggestions.appendChild(result)
+      }
+
+    })
 
 }
 
@@ -86,7 +111,6 @@ function getTrends() {
     .then(json => {
       let trends = []
       trends = json.data
-      console.log(trends)
       json.data.forEach(result => {
         let container = document.getElementById("trends")
         let addDiv = document.createElement("div")
