@@ -5,6 +5,7 @@
 $color-button: #f7c9f3;
 $fontFamily: "Chakra Petch", sans-serif;
 $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+$boxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 @import "dropdownDay";
 
 .bar {
@@ -22,7 +23,7 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
     font-size: 16px;
     width: 1200px;
     background: #e6e6e6;
-    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+    box-shadow: $boxShadow;
     padding-bottom: 12px;
     margin-left: 75px;
     margin-right: 130px;
@@ -67,6 +68,15 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
             padding: 9px 14px 9px 0px;
         }
     }
+}
+
+.btnGoCreate:hover {
+    padding: 2px;
+    background: #e6bbe2;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+    outline: 1px #110038 dotted;
+    outline-offset: -6px;
 }
 
 #searchSuggestions {
@@ -168,19 +178,26 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
         font-family: $fontFamily;
         color: #ffffff;
         font-size: 14px;
+        grid-row: 1;
+        justify-self: center;
     }
     figure {
         width: 286px;
-        height: 298px;
+        height: 289px;
         margin: 0px;
         position: absolute;
         z-index: 2;
+        display: grid;
+        grid-template-rows: 24px 289px;
+        gap: 5px;
     }
     img {
         width: 280px;
         height: 280px;
         position: absolute;
         z-index: 3;
+        grid-row: 2;
+        justify-self: center;
     }
     .close {
         width: 16px;
@@ -196,7 +213,7 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
         width: 81px;
         height: 34px;
         position: absolute;
-        margin-top: 231px;
+        margin-top: 260px;
         margin-left: 11px;
         z-index: 4;
     }
@@ -209,31 +226,101 @@ $gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
 
 .gifTrend {
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    align-content: center;
     width: 286px;
     height: 298px;
-    background: #e6e6e6;
-    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
     z-index: 1;
     figure {
-        width: 286px;
+        width: 288px;
         height: 298px;
         margin: 0px;
         z-index: 2;
     }
+    figcaption {
+        display: none;
+    }
+    figure:hover {
+        display: grid;
+        grid-template-rows: 274px 24px;
+        background-color: #e6e6e6;
+        box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+        padding: 4px;
+        width: 294px;
+        height: 304px;
+        outline: 1px #110038 dotted;
+        outline-offset: -4px;
+        figcaption {
+            display: grid;
+            grid-row: 2;
+            width: 286px;
+            height: 22px;
+            margin: 0px;
+            background-image: $gradient;
+            font-family: $fontFamily;
+            color: #ffffff;
+            font-size: 14px;
+            z-index: 5;
+            justify-self: center;
+        }
+        img {
+            width: 286px;
+            height: 296px;
+            grid-row: 1;
+            z-index: 4;
+            justify-self: center;
+        }
+    }
     img {
         width: 286px;
-        height: 298px;
+        height: 296px;
+        grid-row: 1;
+        z-index: 4;
+    }
+}
+.wideGif:hover {
+    figure {
+        padding: 2px 0 0 0;
     }
 }
 .wideGif {
-    width: 582px;
+    width: 586px;
     grid-column: span 2;
     img {
         width: 582px;
     }
     figure {
         width: 582px;
+        height: 298px;
+    }
+    figure:hover {
+        display: grid;
+        grid-template-rows: 274px 24px;
+        background-color: #e6e6e6;
+        box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+        width: 586px;
+        height: 304px;
+        box-sizing: border-box;
+        border: 1px dotted #110038;
+        figcaption {
+            grid-row: 2;
+            width: 582px;
+            height: 24px;
+            margin: 0px;
+            background-image: $gradient;
+            font-family: $fontFamily;
+            color: #ffffff;
+            font-size: 14px;
+            z-index: 5;
+            justify-self: center;
+        }
+        img {
+            width: 580px;
+            height: 298px;
+            grid-row: 1;
+            z-index: 4;
+            justify-self: center;
+        }
     }
 }
 // .span {

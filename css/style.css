@@ -210,6 +210,16 @@
   padding: 9px 14px 9px 0px;
 }
 
+.btnGoCreate:hover {
+  padding: 2px;
+  background: #e6bbe2;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+  outline: 1px #110038 dotted;
+  outline-offset: -6px;
+}
+
 #searchSuggestions {
   display: none;
   gap: 10px;
@@ -346,14 +356,23 @@
   font-family: "Chakra Petch", sans-serif;
   color: #ffffff;
   font-size: 14px;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 .gifFrame figure {
   width: 286px;
-  height: 298px;
+  height: 289px;
   margin: 0px;
   position: absolute;
   z-index: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 24px 289px;
+      grid-template-rows: 24px 289px;
+  gap: 5px;
 }
 
 .gifFrame img {
@@ -361,6 +380,10 @@
   height: 280px;
   position: absolute;
   z-index: 3;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 .gifFrame .close {
@@ -379,7 +402,7 @@
   width: 81px;
   height: 34px;
   position: absolute;
-  margin-top: 231px;
+  margin-top: 260px;
   margin-left: 11px;
   z-index: 4;
 }
@@ -401,31 +424,84 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   width: 286px;
   height: 298px;
-  background: #e6e6e6;
-  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
-          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
   z-index: 1;
 }
 
 .gifTrend figure {
-  width: 286px;
+  width: 288px;
   height: 298px;
   margin: 0px;
   z-index: 2;
 }
 
+.gifTrend figcaption {
+  display: none;
+}
+
+.gifTrend figure:hover {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 274px 24px;
+      grid-template-rows: 274px 24px;
+  background-color: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+  padding: 4px;
+  width: 294px;
+  height: 304px;
+  outline: 1px #110038 dotted;
+  outline-offset: -4px;
+}
+
+.gifTrend figure:hover figcaption {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  width: 286px;
+  height: 22px;
+  margin: 0px;
+  background-image: -webkit-gradient(linear, right top, left top, from(#f7c9f3), to(#4180f6));
+  background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+  font-family: "Chakra Petch", sans-serif;
+  color: #ffffff;
+  font-size: 14px;
+  z-index: 5;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.gifTrend figure:hover img {
+  width: 286px;
+  height: 296px;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  z-index: 4;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
 .gifTrend img {
   width: 286px;
-  height: 298px;
+  height: 296px;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  z-index: 4;
+}
+
+.wideGif:hover figure {
+  padding: 2px 0 0 0;
 }
 
 .wideGif {
-  width: 582px;
+  width: 586px;
   grid-column: span 2;
 }
 
@@ -435,6 +511,48 @@
 
 .wideGif figure {
   width: 582px;
+  height: 298px;
+}
+
+.wideGif figure:hover {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 274px 24px;
+      grid-template-rows: 274px 24px;
+  background-color: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+  width: 586px;
+  height: 304px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px dotted #110038;
+}
+
+.wideGif figure:hover figcaption {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  width: 582px;
+  height: 24px;
+  margin: 0px;
+  background-image: -webkit-gradient(linear, right top, left top, from(#f7c9f3), to(#4180f6));
+  background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+  font-family: "Chakra Petch", sans-serif;
+  color: #ffffff;
+  font-size: 14px;
+  z-index: 5;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.wideGif figure:hover img {
+  width: 580px;
+  height: 298px;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  z-index: 4;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 .sectionMisGuifos {

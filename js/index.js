@@ -1,5 +1,5 @@
 const apiKey = "mbqOaa1Di4W2ZDeaGsjK5COdrFxzvWSL";
-const trendingUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=10`;
+const trendingUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=24`;
 const searchUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}`;
 const randomUrl = `http://api.giphy.com/v1/gifs/random?api_key=${apiKey}`;
 const searchSuggestionsUrl = `http://api.giphy.com/v1/tags/related/`;
@@ -116,6 +116,7 @@ function getTrends() {
         addDiv.className += "gifTrend"
         let addFigure = document.createElement("figure")
         let addFigCaption = document.createElement("figcaption")
+        addFigCaption.innerHTML = `#${`${trends[index].title}`}`
         let addImg = document.createElement("img") //`<img src="" alt="">`
         addImg.src = `${result.images.preview_gif.url}`
         container.appendChild(addDiv)
