@@ -70,6 +70,14 @@ function search() {
 }
 //Esta funcion inicializa la camara
 function getStreamAndRecord() {
+  document.getElementById('btnCamera').style.display = "none"
+  document.getElementById('btnCapture').style.display = "none"
+  document.getElementById('captureBtns').style.display = "none"
+  document.getElementById('btnImgRecording').style.display = "grid"
+  document.getElementById('btnRecording').style.display = "grid"
+
+
+
   //   navigator.mediaDevices.getUserMedia({
   //     audio: false, video: { height: { exact: 434 } }, width: { exact: 832 }
   //   })
@@ -114,9 +122,17 @@ function getStreamAndRecord() {
 
     recorder.stopRecording(function () {
       let blob = recorder.getBlob();
-      invokeSaveAsDialog(blob);
+      console.log(blob)
+      localStorage.setItem('miGif', JSON.stringify(blob))
+      // invokeSaveAsDialog(blob);
     });
   });
+}
+
+//Oculta el div de instrucciones y muestra el div de capturas
+function comenzar(){
+  document.getElementById('createContainer').style.display = "none"
+  document.getElementById('recordContainer').style.display = "block"
 }
 
 

@@ -535,29 +535,43 @@
     border: 1px solid #979797;
     box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000; }
 
+#recordContainer {
+  display: none; }
+
 .recordBtns {
   display: grid;
   grid-template-columns: 700px 160px; }
   .recordBtns .btnCamera {
+    display: grid;
     grid-column: 1;
     justify-self: right;
     width: 36px;
     height: 36px;
+    margin-top: 21px;
     background: #f7c9f3;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
     .recordBtns .btnCamera img {
       width: 18px;
-      height: 16.5px; }
+      height: 16.5px;
+      margin-top: 8px;
+      margin-left: 2px; }
   .recordBtns .btnCapture {
+    display: grid;
     grid-column: 2;
     justify-self: left;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 16px;
+    color: #000000;
     width: 144px;
     height: 36px;
+    padding-top: 9px;
+    margin-top: 21px;
     background: #f7c9f3;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
   .recordBtns .btnImgRecording {
+    display: none;
     grid-column: 1;
     justify-self: right;
     width: 36px;
@@ -567,13 +581,19 @@
     box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
     margin-top: 21px; }
     .recordBtns .btnImgRecording img {
+      margin-left: 2px;
+      margin-top: 8px;
       width: 18px;
       height: 16.5px; }
   .recordBtns .btnRecording {
+    display: none;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 16px;
     grid-column: 2;
     justify-self: left;
     width: 144px;
     height: 36px;
+    padding-top: 9px;
     margin-top: 21px;
     background: #ff6161;
     border: 1px solid #110038;

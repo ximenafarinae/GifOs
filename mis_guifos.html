@@ -75,7 +75,7 @@
 
                 <div class="createBtnBar">
                     <button class="btnCreateGifsCancell">Cancelar</button>
-                    <button class="btnCreateGifsStart">Comenzar</button>
+                    <button class="btnCreateGifsStart" onclick="comenzar()">Comenzar</button>
                 </div>
 
             </div>
@@ -95,14 +95,14 @@
                 </div>
 
 
-                <!-- <div class="recordBtns">
-                    <button class="btnCamera"><img src="assets/camera.svg" alt="camara"></button>
-                    <button class="btnCapture" onclick="getStreamAndRecord()">Capturar</button>
-                </div> -->
+                <div id="captureBtns" class="recordBtns">
+                    <button id="btnCamera" class="btnCamera"><img src="assets/camera.svg" alt="camara"></button>
+                    <button id="btnCapture" class="btnCapture" onclick="getStreamAndRecord()">Capturar</button>
+                </div>
 
-                <div class="recordBtns">
-                    <button class="btnImgRecording"><img src="assets/recording.svg" alt="Icono Grabando"></button>
-                    <button class="btnRecording" onclick="stop()">Listo</button>
+                <div id="recordBtns" class="recordBtns">
+                    <button id="btnImgRecording" class="btnImgRecording"><img src="assets/recording.svg" alt="Icono Grabando"></button>
+                    <button id="btnRecording" class="btnRecording" onclick="stop()">Listo</button>
                 </div>
 
             </div>
