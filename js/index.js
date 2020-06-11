@@ -1,7 +1,7 @@
 const apiKey = "mbqOaa1Di4W2ZDeaGsjK5COdrFxzvWSL";
 const trendingUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=24`;
 const searchUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}`;
-const randomUrl = `http://api.giphy.com/v1/gifs/random?api_key=${apiKey}`;
+const randomUrl = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`;
 const searchSuggestionsUrl = `http://api.giphy.com/v1/tags/related/`;
 
 
