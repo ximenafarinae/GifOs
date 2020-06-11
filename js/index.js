@@ -68,6 +68,58 @@ function search() {
     })
     .catch(error => console.log(error))
 }
+//Esta funcion inicializa la camara
+function getStreamAndRecord() {
+  //   navigator.mediaDevices.getUserMedia({
+  //     audio: false, video: { height: { exact: 434 } }, width: { exact: 832 }
+  //   })
+  //     .then(function (stream) {
+  //       video = document.getElementById('stream')
+  //       video.srcObject = stream;
+  //       video.play();
+  //       recorder = RecordRTC(stream, {
+  //         type: 'gif',
+  //         frameRate: 1,
+  //         quality: 10,
+  //         width: 360,
+  //         hidden: 240,
+  //         onGifRecordingStarted: function () {
+  //           setTimeout(startRecording(), 5000)
+  //           console.log('started')
+  //         },
+  //       })
+  //     })
+  // }
+
+  // function stop(recorder) {
+  //   recorder.stopRecording()
+  navigator.mediaDevices.getUserMedia({
+    video: true,
+    audio: false, video: { height: { exact: 434 } }, width: { exact: 832 }
+  }).then(async function (stream) {
+    video = document.getElementById('stream')
+    video.srcObject = stream;
+    video.play();
+    let recorder = RecordRTC(stream, {
+      type: 'gif',
+      frameRate: 1,
+      quality: 10,
+      width: 360,
+      hidden: 240
+    });
+    recorder.startRecording();
+
+    const sleep = m => new Promise(r => setTimeout(r, m));
+    await sleep(3000);
+
+    recorder.stopRecording(function () {
+      let blob = recorder.getBlob();
+      invokeSaveAsDialog(blob);
+    });
+  });
+}
+
+
 
 
 //Esta funcion trae los gifs a la seccion hoy te sugerimos
@@ -79,11 +131,14 @@ function getRandoms() {
       .then(json => {
         let container = document.getElementById("sugest")
         let addDiv = document.createElement("div")
-        addDiv.className += "gifFrame"
+        addDiv.classList.add("gifFrame")
         let addFigure = document.createElement("figure")
         let addFigCaption = document.createElement("figcaption")
         addFigCaption.innerHTML = `#${`${json.data.title}`}`
         let addImg = document.createElement("img")
+        let close = document.createElement("img")
+        close.src = "assets/close.svg"
+        close.classList.add("close")
         addImg.src = `${json.data.images.preview_gif.url}`
         let addButton = document.createElement("button")
         addButton.innerHTML = "Ver más..."
@@ -91,6 +146,7 @@ function getRandoms() {
         addDiv.appendChild(addFigure)
         addFigure.appendChild(addFigCaption)
         addFigure.appendChild(addImg)
+        addFigure.appendChild(close)
         addFigure.appendChild(addButton)
 
       })
@@ -123,7 +179,7 @@ function getTrends() {
         addDiv.appendChild(addFigure)
         addFigure.appendChild(addFigCaption)
         addFigure.appendChild(addImg)
-        if ((index +1) % 5 === 0 ) {
+        if ((index + 1) % 5 === 0) {
           addDiv.classList.add('wideGif')
         }
       }
@@ -174,7 +230,14 @@ function initEvents() {
     if (event.keyCode === 13) {
       search()
     }
-  });
+  })
+
+  // var btnClose = document.getElementsByClassName("close");
+  // btnClose.addEventListener("onClick"), function () {
+  //var deletedElement = document.getElementByClassName("gifTrends")
+
+  //   }
+  // }
 }
 
 //Esta funcion llama a las funciones que contiene una vez que se carga el html

@@ -1,9 +1,7 @@
 {
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "createGuifos.scss"
-    ],
-    "names": [],
-    "file": "createGuifos.css"
+"version": 3,
+"mappings": "",
+"sources": [],
+"names": [],
+"file": "createGuifos.css"
 }
