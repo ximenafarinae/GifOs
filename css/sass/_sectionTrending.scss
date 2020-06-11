@@ -1,0 +1,110 @@
+//Seccion tendencias
+.wrapperTrend {
+    display: grid;
+    grid-template-columns: repeat(4, 286px);
+    grid-template-rows: repeat(3, 298px);
+    gap: 16px;
+    justify-content: center;
+}
+
+
+.trending {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gifTrend {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 286px;
+    height: 298px;
+    z-index: 1;
+    figure {
+        width: 288px;
+        height: 298px;
+        margin: 0px;
+        z-index: 2;
+    }
+    figcaption {
+        display: none;
+    }
+    figure:hover {
+        display: grid;
+        grid-template-rows: 274px 24px;
+        background-color: #e6e6e6;
+        box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+        padding: 4px;
+        width: 294px;
+        height: 304px;
+        outline: 1px #110038 dotted;
+        outline-offset: -4px;
+        figcaption {
+            display: grid;
+            grid-row: 2;
+            width: 286px;
+            height: 22px;
+            margin: 0px;
+            background-image: $gradient;
+            font-family: $fontFamily;
+            color: #ffffff;
+            font-size: 14px;
+            z-index: 5;
+            justify-self: center;
+        }
+        img {
+            width: 286px;
+            height: 296px;
+            grid-row: 1;
+            z-index: 4;
+            justify-self: center;
+        }
+    }
+    img {
+        width: 286px;
+        height: 296px;
+        grid-row: 1;
+        z-index: 4;
+    }
+}
+.wideGif {
+    width: 586px;
+    grid-column: span 2;
+    img {
+        width: 582px;
+    }
+    figure {
+        width: 582px;
+        height: 298px;
+    }
+    figure:hover {
+        display: grid;
+        grid-template-rows: 274px 24px;
+        width: 587px;
+        height: 304px;
+        background-color: #e6e6e6;
+        box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+        outline: 1px #110038 dotted;
+        outline-offset: -4px;
+        figcaption {
+            grid-row: 2;
+            width: 578px;
+            height: 22px;
+            margin: 0px;
+            background-image: $gradient;
+            font-family: $fontFamily;
+            color: #ffffff;
+            font-size: 14px;
+            z-index: 5;
+            align-self: normal;
+        }
+        img {
+            width: 578px;
+            height: 286px;
+            grid-row: 1;
+            z-index: 4;
+            align-self: baseline;
+        }
+    }
+}

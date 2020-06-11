@@ -1,0 +1,181 @@
+.createGif {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: 10% 15%;
+    width: 684px;
+    height: 386px;
+    background-color: #e6e6e6;
+    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+    .titleBar {
+        justify-self: start;
+        background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+        margin-top: 1px;
+        margin-left: 3px;
+        padding-left: 7px;
+        padding-top: 6.4px;
+        width: 678px;
+        height: 24px;
+        p {
+            margin: 0px;
+            font-family: "Chakra Petch";
+            font-weight: bold;
+            font-size: 14px;
+            color: #ffffff;
+            letter-spacing: 0;
+        }
+    }
+}
+.instructionsTitle {
+    img {
+        width: 32px;
+        height: 32px;
+        margin-left: 25px;
+        margin-right: 16px;
+        margin-top: 10px;
+    }
+    display: inline-flex;
+    h3 {
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        color: #110038;
+        letter-spacing: 0;
+        line-height: 22px;
+    }
+}
+.instructions {
+    width: 518px;
+    height: 190px;
+    display: grid;
+    grid-template-rows: auto;
+    margin-right: 93px;
+    margin-left: 73px;
+    h6 {
+        margin: 0px;
+        font-family: "Chakra Petch";
+        font-weight: normal;
+        font-size: 14px;
+        color: #110038;
+        letter-spacing: 0;
+        line-height: 20px;
+    }
+    span {
+        font-weight: bold;
+    }
+    .italic {
+        font-style: italic;
+    }
+}
+//Video
+.recordGif {
+    display: grid;
+    grid-template-rows: 24px 451px 73px;
+    width: 860px;
+    height: 548px;
+    background-color: #e6e6e6;
+    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+    .titleBar {
+        justify-self: start;
+        background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+        margin-top: 1px;
+        margin-left: 3px;
+        padding-left: 7px;
+        padding-top: 6.4px;
+        width: 855px;
+        height: 24px;
+        p {
+            margin: 0px;
+            font-family: "Chakra Petch";
+            font-weight: bold;
+            font-size: 14px;
+            color: #ffffff;
+            letter-spacing: 0;
+        }
+    }
+}
+.preview {
+    margin-left: 8px;
+    margin-top: 8px;
+    video {
+        width: 832px;
+        height: 434px;
+        background: #ffffff;
+        border: 1px solid #979797;
+        box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+    }
+}
+
+#recordContainer{
+    display: none;
+}
+
+.recordBtns {
+    display: grid;
+    grid-template-columns: 700px 160px;
+    .btnCamera {
+        display: grid;
+        grid-column: 1;
+        justify-self: right;
+        width: 36px;
+        height: 36px;
+        margin-top: 21px;
+        background: #f7c9f3;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+        img {
+            width: 18px;
+            height: 16.5px;
+            margin-top: 8px;
+            margin-left: 2px;
+        }
+    }
+    .btnCapture {
+        display: grid;
+        grid-column: 2;
+        justify-self: left;
+        font-family: $fontFamily;
+        font-size: 16px;
+        color: #000000;
+        width: 144px;
+        height: 36px;
+        padding-top: 9px;
+        margin-top: 21px;
+        background: #f7c9f3;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+    }
+
+    .btnImgRecording {
+        display: none;
+        grid-column: 1;
+        justify-self: right;
+        width: 36px;
+        height: 36px;
+        background: #ff6161;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
+        margin-top: 21px;
+        img {
+            margin-left: 2px;
+            margin-top: 8px;
+            width: 18px;
+            height: 16.5px;
+            
+        }
+    }
+    .btnRecording {
+        display: none;
+        font-family: $fontFamily;
+        font-size: 16px;
+        grid-column: 2;
+        justify-self: left;
+        width: 144px;
+        height: 36px;
+        padding-top: 9px;
+        margin-top: 21px;
+        background: #ff6161;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
+        color: #ffffff;
+    }
+}

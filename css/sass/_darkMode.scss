@@ -1,20 +1,175 @@
+// * {
+//     box-sizing: border-box;
+// }
+// .bodyDark {
+//     background-color: #110038;
+// }
+
+// $color-button: #f7c9f3;
+// $fontFamily: "Chakra Petch", sans-serif;
+// $gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+
+// .barDark {
+//     background-image: $gradient;
+//     box-shadow: 0 1px 0 0 #110038;
+//     font-family: $fontFamily;
+//     font-size: 12px;
+//     color: #ffffff;
+// }
+
+// .searchDark {
+//     display: grid;
+//     grid-template-columns: 90% 10%;
+//     font-family: $fontFamily;
+//     font-size: 16px;
+//     width: 1200px;
+//     background-color: #b4b4b4;
+//     padding-bottom: 12px;
+//     margin-left: 100px;
+//     margin-right: 130px;
+//     margin-top: 16px;
+//     .pDark {
+//         width: 1200px;
+//         margin-top: 0px;
+//         background-image: $gradient;
+//     }
+//     .inputDark {
+//         grid-column: 1;
+//         margin-left: 15px;
+//         grid-row: 2;
+//         width: 98%;
+//     }
+//     img {
+//         width: 16px;
+//         height: 16px;
+//         margin-right: 4px;
+//     }
+//     button {
+//         grid-row: 2;
+//         width: 102px;
+//         height: 36px;
+//         span {
+//             padding: 9px 14px 9px 0px;
+//         }
+//     }
+// }
+
+// .wrapperSugestionsDark {
+//     display: grid;
+//     grid-template-columns: repeat(4, 21%);
+//     gap: 20px 20px;
+//     justify-content: center;
+// }
+
+// .sectionTitleDark {
+//     font-family: $fontFamily;
+//     font-size: 14px;
+//     display: flex;
+//     padding: 7px;
+//     margin: 64px 140px 19px 100px;
+//     width: 1200px;
+//     background: #fffafe;
+//     border: 1px solid #e6bbe2;
+//     box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+// }
+
+// .wrapperTrendDark {
+//     display: grid;
+//     grid-template-columns: repeat(4, 21%);
+//     grid-template-rows: 33% 33% 33%;
+//     gap: 10px 20px;
+//     justify-content: center;
+// }
+
+// .gifFrameDark {
+//     display: flex;
+//     justify-content: center;
+//     width: 288px;
+//     height: 313px;
+//     background: #e6e6e6;
+//     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+//     position: relative;
+//     z-index: 1;
+
+//     figcaption {
+//         width: 280px;
+//         height: 24px;
+//         margin-top: 3px;
+//         margin-bottom: 2px;
+//         background-image: $gradient;
+//     }
+//     figure {
+//         margin: 0px;
+//         position: absolute;
+//         z-index: 2;
+//     }
+//     img {
+//         width: 280px;
+//         height: 280px;
+//         position: absolute;
+//         z-index: 3;
+//     }
+//     .close {
+//         width: 16px;
+//         height: 14px;
+//     }
+//     button {
+//         font-family: $fontFamily;
+//         font-size: 14px;
+//         background-color: #4180f6;
+//         border: 1px solid #4c2f99;
+//         box-shadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
+//         width: 81px;
+//         height: 34px;
+//         position: absolute;
+//         margin-top: 231px;
+//         margin-left: 11px;
+//         z-index: 4;
+//     }
+// }
+// .gifTrendDark {
+//     display: flex;
+//     justify-content: center;
+//     width: 286px;
+//     height: 298px;
+//     background: #e6e6e6;
+//     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+//     z-index: 1;
+//     figure {
+//         margin: 0px;
+//         z-index: 2;
+//     }
+//     img {
+//         height: 298px;
+//     }
+// }
+
+// .spanDark {
+//     width: 560px;
+//     grid-column: span 2;
+//     grid-column-start: span 2;
+//     grid-column-end: auto;
+// }
+
 * {
     box-sizing: border-box;
 }
 
+$boxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 $color-button: #f7c9f3;
 $fontFamily: "Chakra Petch", sans-serif;
-$gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
-$boxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+$gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
 @import "dropdownDay";
-
+#body {
+    background-color: #110038;
+}
 //Barra superior
 .bar {
-    background-image: $gradient;
-    box-shadow: 0 1px 0 0 #110038;
     font-family: $fontFamily;
     font-size: 12px;
     color: #ffffff;
+    background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+    box-shadow: 0 1px 0 0 #110038;
 }
 
 //Seccion busqueda
@@ -24,12 +179,12 @@ $boxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
     font-family: $fontFamily;
     font-size: 16px;
     width: 1200px;
-    background: #e6e6e6;
-    box-shadow: $boxShadow;
     padding-bottom: 12px;
     margin-left: 75px;
     margin-right: 130px;
     margin-top: 16px;
+    background: #b4b4b4;
+    box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
     p {
         font-family: "Chakra Petch", sans-serif;
         font-weight: bold;
@@ -41,8 +196,7 @@ $boxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
         width: 1200px;
         height: 24px;
         margin-top: 0px;
-        background-image: $gradient;
-        box-shadow: inset 2px 2px 0 0 #ffffff;
+        background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
     }
     input {
         background: #ffffff;
@@ -87,6 +241,112 @@ $boxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
     outline-offset: -6px;
 }
 
+$color-button: #f7c9f3;
+$fontFamily: "Chakra Petch", sans-serif;
+$gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+
+.button_bar {
+    display: flex;
+    justify-content: space-between;
+    font-family: $fontFamily;
+    img {
+        margin: 35px 0 0 91px;
+    }
+    button {
+        background: #ee3efe;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
+        font-family: $fontFamily;
+        width: 131px;
+        height: 36px;
+        margin: 44px 0 0 16px;
+    
+    }
+    .goDown {
+        font-family: $fontFamily;
+        margin-left: -4px;
+        width: 36px;
+        height: 36px;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+    }
+    .special {
+        border: none;
+        background-color: #ffffff;
+        color: #000000;
+        margin-left: 16.5px;
+        margin-right: 75px;
+        box-shadow: none;
+        text-decoration: none;
+
+        span {
+            text-decoration: underline;
+        }
+    }
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.themeSelector {
+    font-family: $fontFamily;
+    display: none;
+    position: absolute;
+    background: #b4b4b4;
+    box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
+    width: 170px;
+    height: 102px;
+
+    a {
+        text-decoration: none;
+        color: #000000;
+        font-family: $fontFamily;
+        font-size: 16px;
+        min-width: 150px;
+        height: 36px;
+        background: #cccccc;
+        border: 1px solid #808080;
+        box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+    }
+}
+
+.show {
+    margin-left: 16px;
+    display: grid;
+    grid-template-rows: 50%;
+    grid-template-columns: 100%;
+    column-gap: 2px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.day {
+    padding: 7px 56px 7px 16px;
+}
+
+.nigth {
+    padding: 7px 40px 7px 16px;
+    margin-top: 5px;
+}
+
+.nigth:hover {
+    color: #ffffff;
+    background: #2e32fb;
+    border: 1px solid rgba(51, 53, 143, 0.2);
+    box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
+    span {
+        text-decoration: underline;
+    }
+}
+.day:hover {
+    color: #ffffff;
+    background: #2e32fb;
+    border: 1px solid rgba(51, 53, 143, 0.2);
+    box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
+    span {
+        text-decoration: underline;
+    }
+}
 
 //Estilos de las sugerencias de busqueda
 #searchSuggestions {
@@ -139,7 +399,6 @@ $boxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
     }
 }
 
-
 //Seccion hoy te sugerimos
 .wrapperSugestions {
     display: grid;
@@ -161,7 +420,6 @@ $boxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
     border: 1px solid #e6bbe2;
     box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
 }
-
 
 //Seccion tendencias
 .wrapperTrend {
@@ -223,12 +481,12 @@ $boxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
         margin: 7px;
     }
     button {
+        background: #2e32fb;
+        border: 1px solid #4c2f99;
+        box-shadow: inset -2px -2px 0 0 #2124b3, inset 2px 2px 0 0 #ffffff;
         font-family: $fontFamily;
         font-size: 14px;
         color: #ffffff;
-        background-color: #4180f6;
-        border: 1px solid #4c2f99;
-        box-shadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
         width: 81px;
         height: 34px;
         position: absolute;
@@ -522,7 +780,7 @@ $boxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
     }
 }
 
-#recordContainer{
+#recordContainer {
     display: none;
 }
 
@@ -577,7 +835,6 @@ $boxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
             margin-top: 8px;
             width: 18px;
             height: 16.5px;
-            
         }
     }
     .btnRecording {

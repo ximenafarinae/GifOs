@@ -1,0 +1,71 @@
+.createBtnBar {
+    display: grid;
+    grid-template-columns: repeat(3, 228px);
+    gap: 16px;
+    .button {
+        font-family: $fontFamily;
+        width: 131px;
+        height: 36px;
+        margin: 44px 0 0 16px;
+        background-color: $color-button;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+    }
+    .btnCreateGifsCancell {
+        justify-self: end;
+        align-self: center;
+        width: 144px;
+        height: 36px;
+        grid-column: 2/3;
+        background: #fff4fd;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+        font-family: $fontFamily;
+    }
+    .btnCreateGifsStart {
+        justify-self: start;
+        align-self: center;
+        width: 144px;
+        height: 36px;
+        grid-column: 3/4;
+        background: #f7c9f3;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+        font-family: $fontFamily;
+    }
+}
+//Boton crear Guifos
+.btnGoCreate:hover {
+    padding: 2px;
+    background: #e6bbe2;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+    outline: 1px #110038 dotted;
+    outline-offset: -6px;
+}
+.btnGoCreate:active {
+    background-color: #e6bbe2;
+    outline: 1px #110038 dotted;
+    outline-offset: -6px;
+}
+#createHeader {
+    #arrow {
+        margin-left: 60px;
+        margin-top: 55px;
+        width: 24px;
+        height: 24px;
+        grid-column: 1/2;
+    }
+    #logo {
+        margin-top: 35px;
+        margin-bottom: 75px;
+        width: 102.6px;
+        height: 64px;
+        grid-column: 2/3;
+    }
+    div {
+        display: grid;
+        grid-template-columns: 6.5% 10%;
+        gap: 7px;
+    }
+}
