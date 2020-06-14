@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0px;
+}
+.results {
+    padding-left: 100px;
+}
+.resultContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 288px);
+    grid-template-rows: repeat(3, 290px);
+    gap: 16px;
+}
+.gifResult {
+    justify-self: center;
+    align-self: center;
+}
+
+.sectionTitleR {
+    font-family: "Chakra Petch";
+    font-size: 14px;
+    display: flex;
+    justify-self: center;
+    padding: 7px;
+    width: 1195px;
+    background: #fffafe;
+    border: 1px solid #2e32fb;
+    box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #110038;
+}
+
+//Search tags
+// .searchTags {
+//     width: 100px;
+//     height: 34px;
+//     background: #4180f6;
+//     border: 1px solid #4c2f99;
+//     box-shadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
+// }
+#showHashtags {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 8px;
+    margin-top: 8px;
+    margin-left: 75px;
+    div {
+        display: flex;
+        flex-direction: row;
+        width: 100px;
+        height: 34px;
+        background-color: #4180f6;
+        border: 1px solid #4c2f99;
+        box-shadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
+        span {
+            font-family: "Chakra Petch", sans-serif;
+            font-size: 14px;
+            color: #ffffff;
+            letter-spacing: 0;
+            line-height: 18px;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+}

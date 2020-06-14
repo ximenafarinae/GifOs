@@ -55,52 +55,47 @@ function searchSuggestions() {
 //Esta funcion permite realizar la busqueda desde la barra
 function search() {
   let searchValue = document.getElementById("searchInput").value;
-  fetch(searchUrl + "&q=" + searchValue)
+  document.getElementById('results').style.display = "block"
+  fetch(searchUrl + "&q=" + searchValue + "&limit=24")
     .then(response => response.json())
     .then(json => {
-      let searchResults = document.getElementById("searchResults");
-      var html = "";
-      json.data.forEach(result => {
-        console.log(result)
-        html = html + `<img src="${result.images.preview_gif.url}"></img>`
-      });
-      searchResults.innerHTML = html;
+      let results = []
+      results = json.data
+      for (let index = 0; index < results.length; index++) {
+        const result = results[index];
+        let container = document.getElementById("resultContainer")
+        let addDiv = document.createElement("div")
+        addDiv.className += "gifResult"
+        let addFigure = document.createElement("figure")
+        let addFigCaption = document.createElement("figcaption")
+        console.log(result.title)
+        addFigCaption.innerHTML = `#${`${result.title}`}`
+        let addImg = document.createElement("img") //`<img src="" alt="">`
+        addImg.src = `${result.images.preview_gif.url}`
+        container.appendChild(addDiv)
+        addDiv.appendChild(addFigure)
+        addFigure.appendChild(addFigCaption)
+        addFigure.appendChild(addImg)
+        if ((index + 1) % 5 === 0) {
+          addImg.src = `${result.images.downsized_large.url}`
+          addDiv.classList.add('wideGif')
+        }
+      }
+
     })
     .catch(error => console.log(error))
 }
+
+
+
 //Esta funcion inicializa la camara
 function getStreamAndRecord() {
-  document.getElementById('btnCamera').style.display = "none"
-  document.getElementById('btnCapture').style.display = "none"
-  document.getElementById('captureBtns').style.display = "none"
-  document.getElementById('btnImgRecording').style.display = "grid"
-  document.getElementById('btnRecording').style.display = "grid"
+  // document.getElementById('btnCamera').style.display = "none"
+  // document.getElementById('btnCapture').style.display = "none"
+  // document.getElementById('captureBtns').style.display = "none"
+  //  document.getElementById('btnImgRecording').style.display = "grid"
+  //  document.getElementById('btnRecording').style.display = "grid"
 
-
-
-  //   navigator.mediaDevices.getUserMedia({
-  //     audio: false, video: { height: { exact: 434 } }, width: { exact: 832 }
-  //   })
-  //     .then(function (stream) {
-  //       video = document.getElementById('stream')
-  //       video.srcObject = stream;
-  //       video.play();
-  //       recorder = RecordRTC(stream, {
-  //         type: 'gif',
-  //         frameRate: 1,
-  //         quality: 10,
-  //         width: 360,
-  //         hidden: 240,
-  //         onGifRecordingStarted: function () {
-  //           setTimeout(startRecording(), 5000)
-  //           console.log('started')
-  //         },
-  //       })
-  //     })
-  // }
-
-  // function stop(recorder) {
-  //   recorder.stopRecording()
   navigator.mediaDevices.getUserMedia({
     video: true,
     audio: false, video: { height: { exact: 434 } }, width: { exact: 832 }
@@ -130,7 +125,7 @@ function getStreamAndRecord() {
 }
 
 //Oculta el div de instrucciones y muestra el div de capturas
-function comenzar(){
+function comenzar() {
   document.getElementById('createContainer').style.display = "none"
   document.getElementById('recordContainer').style.display = "block"
 }
@@ -196,6 +191,7 @@ function getTrends() {
         addFigure.appendChild(addFigCaption)
         addFigure.appendChild(addImg)
         if ((index + 1) % 5 === 0) {
+          addImg.src = `${result.images.downsized_large.url}`
           addDiv.classList.add('wideGif')
         }
       }
@@ -247,13 +243,6 @@ function initEvents() {
       search()
     }
   })
-
-  // var btnClose = document.getElementsByClassName("close");
-  // btnClose.addEventListener("onClick"), function () {
-  //var deletedElement = document.getElementByClassName("gifTrends")
-
-  //   }
-  // }
 }
 
 //Esta funcion llama a las funciones que contiene una vez que se carga el html

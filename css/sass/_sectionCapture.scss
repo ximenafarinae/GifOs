@@ -106,7 +106,7 @@
 }
 
 #recordContainer{
-    display: none;
+    display: block;
 }
 
 .recordBtns {
@@ -146,7 +146,7 @@
     }
 
     .btnImgRecording {
-        display: none;
+        display: grid;
         grid-column: 1;
         justify-self: right;
         width: 36px;
@@ -164,7 +164,7 @@
         }
     }
     .btnRecording {
-        display: none;
+        display: grid;
         font-family: $fontFamily;
         font-size: 16px;
         grid-column: 2;
