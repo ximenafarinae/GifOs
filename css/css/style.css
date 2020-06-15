@@ -502,22 +502,23 @@ body {
   height: 386px;
   background-color: #e6e6e6;
   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff; }
-  .createGif .titleBar {
-    justify-self: start;
-    background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
-    margin-top: 1px;
-    margin-left: 3px;
-    padding-left: 7px;
-    padding-top: 6.4px;
-    width: 678px;
-    height: 24px; }
-    .createGif .titleBar p {
-      margin: 0px;
-      font-family: "Chakra Petch";
-      font-weight: bold;
-      font-size: 14px;
-      color: #ffffff;
-      letter-spacing: 0; }
+
+.titleBar {
+  justify-self: start;
+  background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+  margin-top: 1px;
+  margin-left: 3px;
+  padding-left: 7px;
+  padding-top: 3.4px;
+  width: 678px;
+  height: 24px; }
+  .titleBar p {
+    margin: 0px;
+    font-family: "Chakra Petch";
+    font-weight: bold;
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: 0; }
 
 .instructionsTitle {
   display: inline-flex; }
@@ -552,8 +553,9 @@ body {
     line-height: 20px; }
   .instructions span {
     font-weight: bold; }
-  .instructions .italic {
-    font-style: italic; }
+
+.italic {
+  font-style: italic; }
 
 .recordGif {
   display: grid;
@@ -562,22 +564,23 @@ body {
   height: 548px;
   background-color: #e6e6e6;
   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff; }
-  .recordGif .titleBar {
-    justify-self: start;
-    background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
-    margin-top: 1px;
-    margin-left: 3px;
-    padding-left: 7px;
-    padding-top: 6.4px;
-    width: 855px;
-    height: 24px; }
-    .recordGif .titleBar p {
-      margin: 0px;
-      font-family: "Chakra Petch";
-      font-weight: bold;
-      font-size: 14px;
-      color: #ffffff;
-      letter-spacing: 0; }
+
+.titleBarWide {
+  justify-self: start;
+  background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+  margin-top: 1px;
+  margin-left: 3px;
+  padding-left: 7px;
+  padding-top: 3.4px;
+  width: 855px;
+  height: 24px; }
+  .titleBarWide p {
+    margin: 0px;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: 0; }
 
 .preview {
   margin-left: 8px;
@@ -595,64 +598,305 @@ body {
 .recordBtns {
   display: grid;
   grid-template-columns: 700px 160px; }
-  .recordBtns .btnCamera {
-    display: grid;
-    grid-column: 1;
-    justify-self: right;
-    width: 36px;
-    height: 36px;
-    margin-top: 21px;
-    background: #f7c9f3;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
-    .recordBtns .btnCamera img {
-      width: 18px;
-      height: 16.5px;
-      margin-top: 8px;
-      margin-left: 2px; }
-  .recordBtns .btnCapture {
-    display: grid;
-    grid-column: 2;
-    justify-self: left;
+
+.btnRecording {
+  grid-row: 1;
+  display: grid;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 16px;
+  grid-column: 2;
+  justify-self: left;
+  width: 144px;
+  height: 36px;
+  padding-top: 9px;
+  margin-top: 21px;
+  background: #ff6161;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
+  color: #ffffff; }
+
+.btnCamera {
+  display: grid;
+  grid-column: 1;
+  justify-self: right;
+  width: 36px;
+  height: 36px;
+  margin-top: 21px;
+  background: #f7c9f3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
+  .btnCamera img {
+    width: 18px;
+    height: 16.5px;
+    margin-top: 8px;
+    margin-left: 2px; }
+
+.btnCapture {
+  display: grid;
+  grid-column: 2;
+  justify-self: left;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 16px;
+  color: #000000;
+  width: 144px;
+  height: 36px;
+  padding-top: 9px;
+  margin-top: 21px;
+  background: #f7c9f3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
+
+.btnImgRecording {
+  display: grid;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: right;
+  width: 36px;
+  height: 36px;
+  background: #ff6161;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
+  margin-top: 21px; }
+  .btnImgRecording img {
+    margin-left: 2px;
+    margin-top: 8px;
+    width: 18px;
+    height: 16.5px; }
+
+.timer {
+  display: flex;
+  grid-row: 1;
+  grid-column: 1;
+  width: 124px;
+  height: 36px;
+  background: #ffffff;
+  border: 1px solid #979797;
+  box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+  margin: 21px 0 16px 11px; }
+  .timer span {
+    justify-self: center;
+    align-self: center;
+    font-family: "Chakra Petch", sans-serif;
+    padding: 7px 13px 7px 21px; }
+
+.uploadOrRepeatBtns {
+  display: grid;
+  grid-template-columns: 150px 30px 347px 156px 156px;
+  gap: 4px; }
+
+.repeatBtn {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+  grid-column: 4;
+  width: 144px;
+  height: 36px;
+  margin-top: 21px;
+  background: #fff4fd;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
+
+.uploadBtn {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+  grid-column: 5;
+  width: 144px;
+  height: 36px;
+  margin-top: 21px;
+  margin-right: 16px;
+  background: #f7c9f3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
+
+.timer {
+  grid-column: 1; }
+
+.btnPlay {
+  grid-column: 2;
+  width: 20px;
+  height: 20px;
+  justify-self: end;
+  align-self: center;
+  background: #f7c9f3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
+  .btnPlay img {
+    margin: 1px; }
+
+.progressBar {
+  width: 240px;
+  height: 24px;
+  margin-left: 4px;
+  align-self: center; }
+  .progressBar progress {
+    width: 240px;
+    height: 24px;
+    background: #b4b4b4;
+    box-shadow: inset 2px 2px 0 0 #fffcfc, inset -2px -2px 0 0 #000000; }
+
+.uploadingScreen {
+  width: 838px;
+  height: 440px;
+  margin-top: 8px;
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #979797;
+  box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000; }
+  .uploadingScreen img {
+    justify-self: center;
+    align-self: center; }
+  .uploadingScreen h4 {
+    align-self: center;
     font-family: "Chakra Petch", sans-serif;
     font-size: 16px;
-    color: #000000;
-    width: 144px;
-    height: 36px;
-    padding-top: 9px;
-    margin-top: 21px;
-    background: #f7c9f3;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
-  .recordBtns .btnImgRecording {
-    display: grid;
-    grid-column: 1;
-    justify-self: right;
-    width: 36px;
-    height: 36px;
-    background: #ff6161;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
-    margin-top: 21px; }
-    .recordBtns .btnImgRecording img {
-      margin-left: 2px;
-      margin-top: 8px;
-      width: 18px;
-      height: 16.5px; }
-  .recordBtns .btnRecording {
-    display: grid;
+    color: #110038;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 22px;
+    margin-bottom: 39px;
+    margin-top: 8px; }
+  .uploadingScreen h6 {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 12px;
+    color: #11003864;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 14px;
+    margin-top: 10px; }
+    .uploadingScreen h6 span {
+      text-decoration: line-through; }
+
+.screenProgressBar {
+  display: inline-flex;
+  justify-content: center; }
+
+.btnCancell {
+  grid-column: 5;
+  width: 144px;
+  height: 36px;
+  margin-top: 21px;
+  margin-right: 14px;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+  background: #fff4fd;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
+
+.success {
+  width: 721px;
+  height: 391px;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  grid-template-rows: 25px 223px 144px;
+  background: #e6e6e6;
+  box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff; }
+
+.titleBarSuccess {
+  justify-self: start;
+  background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+  margin-top: 1px;
+  margin-left: 3px;
+  padding-left: 7px;
+  padding-top: 6.4px;
+  width: 715px;
+  height: 24px; }
+  .titleBarSuccess p {
+    margin: 0px;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: 0; }
+
+.miniPreview {
+  width: 371px;
+  height: 196px;
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 27px;
+  margin-left: 24px;
+  background: #ffffff;
+  border: 1px solid #979797;
+  box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000; }
+
+.btnsCopyAndDownload {
+  grid-row: 2;
+  display: grid;
+  grid-template-rows: repeat(3, 36px);
+  justify-content: center;
+  gap: 14px;
+  margin-top: 30px; }
+  .btnsCopyAndDownload h4 {
     font-family: "Chakra Petch", sans-serif;
     font-size: 16px;
-    grid-column: 2;
-    justify-self: left;
-    width: 144px;
-    height: 36px;
-    padding-top: 9px;
-    margin-top: 21px;
-    background: #ff6161;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
-    color: #ffffff; }
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 22px;
+    margin: 0px;
+    align-self: end; }
+
+.copyGif {
+  width: 256px;
+  height: 36px;
+  grid-row: 2;
+  font-family: "Chakra Petch", sans-serif;
+  align-self: end;
+  background: #fff4fd;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
+
+.downloadGif {
+  width: 256px;
+  height: 36px;
+  grid-row: 3;
+  font-family: "Chakra Petch", sans-serif;
+  background: #fff4fd;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
+
+.done {
+  width: 144px;
+  height: 36px;
+  grid-column: 2;
+  grid-row: 3;
+  font-family: "Chakra Petch", sans-serif;
+  margin-left: 139px;
+  margin-top: 64px;
+  background: #f7c9f3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
+
+#captureOne {
+  padding-left: 378px; }
+
+#captureTwo {
+  padding-left: 265px; }
+
+#captureThree {
+  padding-left: 265px; }
+
+#captureFour {
+  padding-left: 265px; }
+
+#captureFive {
+  padding-left: 265px; }
+
+#captureSix {
+  padding-left: 360px; }
 
 .sectionMisGuifos {
   display: flex;

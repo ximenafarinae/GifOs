@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="css/styles/normalize.css">
+    <link rel="stylesheet" href="css/styles/normalize.css">
     <link rel="stylesheet" href="css/styles/darkMode.css">
-    <link rel="stylesheet" href="css/styles/style.css"> -->
+    <link rel="stylesheet" href="css/css/style.css">
     <link rel="stylesheet" href="css/styles/normalize.css">
     <link rel="stylesheet" href="css/css/darkMode.css">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
@@ -18,21 +18,10 @@
         <div id="bar" class="bar">
             ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803
         </div>
-
-        <div id="createHeader">
-            <div>
-                <img id="arrow" src="assets/arrow.svg" alt="flecha">
-                <img id="logo" src="assets/gifOF_logo.png" alt="Logo GifOs">
-            </div>
-
-        </div>
-        <!-- 
-        <div class="button_bar">
-
+        <div id="headerBtnsBar" class="button_bar">
             <img id="logo" src="assets/gifOF_logo.png" alt="Logo GifOs">
             <div>
                 <button>Crear Guifos</button>
-
                 <div class="dropdown">
                     <button onclick="dropBtn()">Elegir tema</button>
                     <button onclick="dropBtn()" class="goDown">▼</button>
@@ -40,82 +29,15 @@
                         <a href="index.html" class="day"><span>S</span>ailor Day</a>
                         <a onclick="darkMode()" class="nigth"><span>S</span>ailor Nigth</a>
                     </div>
-
                 </div>
-
                 <button class="special"> <span>M</span>is Guifos</button>
-
-            </div>  -->
-
+            </div>
         </div>
-
     </header>
 
     <section class="sectionMisGuifos">
-
-        <div id="createContainer">
-            <div class="createGif">
-                <div class="titleBar">
-                    <p>Crear Guifos</p>
-                </div>
-                <div class="instructionsTitle">
-                    <img src="assets/window img.png" alt="">
-                    <h3>Aquí podrás crear tus propios guifos</h3>
-                </div>
-                <div class="instructions">
-                    <h6>
-                        Crear tu <span class="italic">guifo</span> es muy fácil, graba cualquier imagen con tu cámara y
-                        obtén guifos personalizados. Los
-                        pasos para crear tu guifo son:
-                    </h6>
-                    <h6><span>1)</span> Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</h6>
-                    <h6><span>2)</span> Capturar tu momento guifo</h6>
-                    <h6><span>3)</span> Revisar el momento</h6>
-                    <h6><span>4)</span> Listo para subir y compartir!</h6>
-                    <h6>¿Quieres comenzar a crear tu <span class="italic">guifo</span> ahora?</h6>
-                </div>
-
-                <div class="createBtnBar">
-                    <button class="btnCreateGifsCancell">Cancelar</button>
-                    <button class="btnCreateGifsStart" onclick="comenzar()">Comenzar</button>
-                </div>
-
-            </div>
-        </div>
-
-
-        <div id="recordContainer">
-            <div class="recordGif">
-                <div class="titleBar">
-                    <p>Un Chequeo Antes de Empezar</p>
-                </div>
-
-                <div class="preview">
-
-                    <video id="stream"></video>
-
-                </div>
-
-
-                <div id="captureBtns" class="recordBtns">
-                    <button id="btnCamera" class="btnCamera"><img src="assets/camera.svg" alt="camara"></button>
-                    <button id="btnCapture" class="btnCapture" onclick="getStreamAndRecord()">Capturar</button>
-                </div>
-
-                <div id="recordBtns" class="recordBtns">
-                    <button id="btnImgRecording" class="btnImgRecording"><img src="assets/recording.svg" alt="Icono Grabando"></button>
-                    <button id="btnRecording" class="btnRecording" onclick="stop()">Listo</button>
-                </div>
-
-            </div>
-        </div>
-
-
-
         <h4 class="sectionTitle">Mis guifos:</h4>
-
         <div id="myGifs" class="wrapperMyGifs">
-
             <div class="myGifos"></div>
             <div class="myGifos"></div>
             <div class="myGifos"></div>
@@ -136,7 +58,7 @@
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/R
 ecordRTC.js" type="text/javascript"></script>
-    <!-- <script src="/js/getStreamAndRecord.js"></script> -->
+    <script src="/js/getStreamAndRecord.js"></script>
     <script src="js/index.js"></script>
 </body>
 

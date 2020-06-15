@@ -8,25 +8,25 @@ const searchSuggestionsUrl = `http://api.giphy.com/v1/tags/related/`;
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function dropBtn() {
-  document.getElementById("themes").classList.toggle("show");
+  d("themes").classList.toggle("show");
 }
 
 //Hacer una funcion que muestre la barra de sugerencias de busqueda
 function showSuggestions() {
-  let content = document.getElementById('searchInput').value
+  let content = d('searchInput').value
   if (content != "") {
-    document.getElementById('showSearchSuggestions').style.display = "block"
-    document.getElementById('searchSuggestions').style.display = "grid"
+    d('showSearchSuggestions').style.display = "block"
+    d('searchSuggestions').style.display = "grid"
   } else {
-    document.getElementById('showSearchSuggestions').style.display = "none"
-    document.getElementById('searchSuggestions').style.display = "none"
+    d('showSearchSuggestions').style.display = "none"
+    d('searchSuggestions').style.display = "none"
   }
 
 }
 
 //Hacer una funcion que me traiga las sugerencias de busqueda
 function searchSuggestions() {
-  let term = document.getElementById('searchInput').value
+  let term = d('searchInput').value
   if (term === "") {
     return
   }
@@ -34,8 +34,8 @@ function searchSuggestions() {
 
     .then(response => response.json())
     .then(json => {
-      let sectionSearch = document.getElementById('sectionSearch')
-      let searchSuggestions = document.getElementById('searchSuggestions')
+      let sectionSearch = d('sectionSearch')
+      let searchSuggestions = d('searchSuggestions')
       searchSuggestions.innerHTML = ""
       sectionSearch.appendChild(searchSuggestions)
       let resultLength = Math.min(3, json.data.length)
@@ -54,8 +54,8 @@ function searchSuggestions() {
 
 //Esta funcion permite realizar la busqueda desde la barra
 function search() {
-  let searchValue = document.getElementById("searchInput").value;
-  document.getElementById('results').style.display = "block"
+  let searchValue = d("searchInput").value;
+  d('results').style.display = "block"
   fetch(searchUrl + "&q=" + searchValue + "&limit=24")
     .then(response => response.json())
     .then(json => {
@@ -63,14 +63,14 @@ function search() {
       results = json.data
       for (let index = 0; index < results.length; index++) {
         const result = results[index];
-        let container = document.getElementById("resultContainer")
+        let container = d("resultContainer")
         let addDiv = document.createElement("div")
         addDiv.className += "gifResult"
         let addFigure = document.createElement("figure")
         let addFigCaption = document.createElement("figcaption")
         console.log(result.title)
         addFigCaption.innerHTML = `#${`${result.title}`}`
-        let addImg = document.createElement("img") //`<img src="" alt="">`
+        let addImg = document.createElement("img")
         addImg.src = `${result.images.preview_gif.url}`
         container.appendChild(addDiv)
         addDiv.appendChild(addFigure)
@@ -86,48 +86,52 @@ function search() {
     .catch(error => console.log(error))
 }
 
-
+//Esta funcion obtiene un elemento por su id
+function d(id) {
+  return document.getElementById(id);
+}
 
 //Esta funcion inicializa la camara
 function getStreamAndRecord() {
-  // document.getElementById('btnCamera').style.display = "none"
-  // document.getElementById('btnCapture').style.display = "none"
-  // document.getElementById('captureBtns').style.display = "none"
-  //  document.getElementById('btnImgRecording').style.display = "grid"
-  //  document.getElementById('btnRecording').style.display = "grid"
 
   navigator.mediaDevices.getUserMedia({
     video: true,
     audio: false, video: { height: { exact: 434 } }, width: { exact: 832 }
   }).then(async function (stream) {
-    video = document.getElementById('stream')
+    video = d('stream')
     video.srcObject = stream;
     video.play();
-    let recorder = RecordRTC(stream, {
-      type: 'gif',
-      frameRate: 1,
-      quality: 10,
-      width: 360,
-      hidden: 240
-    });
-    recorder.startRecording();
+    // let recorder = RecordRTC(stream, {
+    //   type: 'gif',
+    //   frameRate: 1,
+    //   quality: 10,
+    //   width: 360,
+    //   hidden: 240
+    // });
+    // recorder.startRecording();
 
-    const sleep = m => new Promise(r => setTimeout(r, m));
-    await sleep(3000);
+    // const sleep = m => new Promise(r => setTimeout(r, m));
+    // await sleep(3000);
 
-    recorder.stopRecording(function () {
-      let blob = recorder.getBlob();
-      console.log(blob)
-      localStorage.setItem('miGif', JSON.stringify(blob))
-      // invokeSaveAsDialog(blob);
-    });
+    // recorder.stopRecording(function () {
+    //   let blob = recorder.getBlob();
+    //   console.log(blob)
+    //   localStorage.setItem('miGif', JSON.stringify(blob))
+    //   // invokeSaveAsDialog(blob);
+    // });
   });
 }
 
 //Oculta el div de instrucciones y muestra el div de capturas
 function comenzar() {
-  document.getElementById('createContainer').style.display = "none"
-  document.getElementById('recordContainer').style.display = "block"
+  d('captureOne').style.display = "none"
+  d('captureTwo').style.display = "block"
+  getStreamAndRecord()
+}
+
+function capturar() {
+  d('captureTwo').style.display = "none"
+  d('captureThree').style.display = "block"
 }
 
 
@@ -140,7 +144,7 @@ function getRandoms() {
     fetch(randomUrl)
       .then(response => response.json())
       .then(json => {
-        let container = document.getElementById("sugest")
+        let container = d("sugest")
         let addDiv = document.createElement("div")
         addDiv.classList.add("gifFrame")
         let addFigure = document.createElement("figure")
@@ -178,7 +182,7 @@ function getTrends() {
       trends = json.data
       for (let index = 0; index < trends.length; index++) {
         const result = trends[index];
-        let container = document.getElementById("trends")
+        let container = d("trends")
         let addDiv = document.createElement("div")
         addDiv.className += "gifTrend"
         let addFigure = document.createElement("figure")
@@ -205,19 +209,19 @@ function getTrends() {
 
 //Esta funcion permite hacer el cambio a modo oscuro
 function darkMode() {
-  let barDark = document.getElementById('bar')
+  let barDark = d('bar')
   barDark.classList.remove('bar')
   barDark.className += "barDark"
-  let bodyDark = document.getElementById('body')
+  let bodyDark = d('body')
   bodyDark.className += "bodyDark"
-  let logoDark = document.getElementById('logo')
+  let logoDark = d('logo')
   logoDark.src = 'assets/gifOF_logo_dark.png'
-  let divSearchDark = document.getElementById('search')
+  let divSearchDark = d('search')
   divSearchDark.classList.remove('search')
   divSearchDark.className += "searchDark"
-  let pDark = document.getElementById('pDark')
+  let pDark = d('pDark')
   pDark.className += "pDark"
-  let inputDark = document.getElementById('searchInput')
+  let inputDark = d('searchInput')
   inputDark.className += "inputDark"
 
 }
@@ -237,7 +241,7 @@ function initEvents() {
     }
   }
 
-  var input = document.getElementById("searchInput");
+  var input = d("searchInput");
   input.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
       search()
