@@ -7,7 +7,6 @@
     justify-content: center;
 }
 
-
 .trending {
     display: flex;
     flex-direction: column;
@@ -52,6 +51,9 @@
             font-size: 14px;
             z-index: 5;
             justify-self: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         img {
             width: 286px;
@@ -98,6 +100,9 @@
             font-size: 14px;
             z-index: 5;
             align-self: normal;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         img {
             width: 578px;

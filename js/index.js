@@ -2,7 +2,8 @@ const apiKey = "mbqOaa1Di4W2ZDeaGsjK5COdrFxzvWSL";
 const trendingUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=24`;
 const searchUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}`;
 const randomUrl = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`;
-const searchSuggestionsUrl = `http://api.giphy.com/v1/tags/related/`;
+const searchSuggestionsUrl = `https://api.giphy.com/v1/tags/related/`;
+const uploadUrl = `https://upload.giphy.com/v1/gifs?api_key=${apiKey}`;
 
 
 /* When the user clicks on the button,
@@ -92,8 +93,9 @@ function d(id) {
 }
 
 //Esta funcion inicializa la camara
-function getStreamAndRecord() {
+let form = new FormData();
 
+function getStreamAndRecord() {
   navigator.mediaDevices.getUserMedia({
     video: true,
     audio: false, video: { height: { exact: 434 } }, width: { exact: 832 }
@@ -101,26 +103,43 @@ function getStreamAndRecord() {
     video = d('stream')
     video.srcObject = stream;
     video.play();
-    // let recorder = RecordRTC(stream, {
-    //   type: 'gif',
-    //   frameRate: 1,
-    //   quality: 10,
-    //   width: 360,
-    //   hidden: 240
-    // });
-    // recorder.startRecording();
-
-    // const sleep = m => new Promise(r => setTimeout(r, m));
-    // await sleep(3000);
-
-    // recorder.stopRecording(function () {
-    //   let blob = recorder.getBlob();
-    //   console.log(blob)
-    //   localStorage.setItem('miGif', JSON.stringify(blob))
-    //   // invokeSaveAsDialog(blob);
-    // });
+    let recorder = RecordRTC(stream, {
+      type: 'gif',
+      frameRate: 1,
+      quality: 10,
+      width: 360,
+      hidden: 240
+    });
+    recorder.startRecording();
+    const sleep = m => new Promise(r => setTimeout(r, m));
+    await sleep(3000);
+    recorder.stopRecording(function () {
+      form.append('file', recorder.getBlob(), 'myGif.gif');
+      console.log(form.get('file'))
+    });
   });
 }
+
+function upload() {
+
+  fetch(uploadUrl, {
+    method: 'POST',
+    body: form,
+    headers: new Headers(),
+    mode: 'cors',
+    cache: 'default'
+  })
+    .then(response => response.json())
+    .then(json => {
+      let results = json.data
+      console.log(results);
+      localStorage.setItem('recordedGifId', results.id);
+
+    })
+}
+
+
+
 
 //Oculta el div de instrucciones y muestra el div de capturas
 function comenzar() {

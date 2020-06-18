@@ -38,6 +38,9 @@
         margin-bottom: 2px;
         background-image: $gradient;
         font-family: $fontFamily;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         color: #ffffff;
         font-size: 14px;
         grid-row: 1;
