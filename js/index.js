@@ -6,6 +6,10 @@ const searchSuggestionsUrl = `https://api.giphy.com/v1/tags/related/`;
 const uploadUrl = `https://upload.giphy.com/v1/gifs?api_key=${apiKey}`;
 
 
+function irACrear() {
+    document.location.href = '/crear_guifos.html'
+}
+
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function dropBtn() {
@@ -31,6 +35,7 @@ function searchSuggestions() {
   if (term === "") {
     return
   }
+ 
   fetch(searchSuggestionsUrl + term + `?api_key=${apiKey}`)
 
     .then(response => response.json())
@@ -55,6 +60,8 @@ function searchSuggestions() {
 
 //Esta funcion permite realizar la busqueda desde la barra
 function search() {
+  let container = d("resultContainer")
+  container.innerHTML = ""
   let searchValue = d("searchInput").value;
   d('results').style.display = "block"
   fetch(searchUrl + "&q=" + searchValue + "&limit=24")
@@ -64,7 +71,7 @@ function search() {
       results = json.data
       for (let index = 0; index < results.length; index++) {
         const result = results[index];
-        let container = d("resultContainer")
+        
         let addDiv = document.createElement("div")
         addDiv.className += "gifResult"
         let addFigure = document.createElement("figure")
