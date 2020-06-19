@@ -7,41 +7,41 @@ const uploadUrl = `https://upload.giphy.com/v1/gifs?api_key=${apiKey}`;
 
 
 function irACrear() {
-    document.location.href = '/crear_guifos.html'
+  document.location.href = '/crear_guifos.html'
 }
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function dropBtn() {
-  d("themes").classList.toggle("show");
+  document.getElementById("themes").classList.toggle("show");
 }
 
 //Hacer una funcion que muestre la barra de sugerencias de busqueda
 function showSuggestions() {
-  let content = d('searchInput').value
+  let content = document.getElementById('searchInput').value
   if (content != "") {
-    d('showSearchSuggestions').style.display = "block"
-    d('searchSuggestions').style.display = "grid"
+    document.getElementById('showSearchSuggestions').style.display = "block"
+    document.getElementById('searchSuggestions').style.display = "grid"
   } else {
-    d('showSearchSuggestions').style.display = "none"
-    d('searchSuggestions').style.display = "none"
+    document.getElementById('showSearchSuggestions').style.display = "none"
+    document.getElementById('searchSuggestions').style.display = "none"
   }
 
 }
 
 //Hacer una funcion que me traiga las sugerencias de busqueda
 function searchSuggestions() {
-  let term = d('searchInput').value
+  let term = document.getElementById('searchInput').value
   if (term === "") {
     return
   }
- 
+
   fetch(searchSuggestionsUrl + term + `?api_key=${apiKey}`)
 
     .then(response => response.json())
     .then(json => {
-      let sectionSearch = d('sectionSearch')
-      let searchSuggestions = d('searchSuggestions')
+      let sectionSearch = document.getElementById('sectionSearch')
+      let searchSuggestions = document.getElementById('searchSuggestions')
       searchSuggestions.innerHTML = ""
       sectionSearch.appendChild(searchSuggestions)
       let resultLength = Math.min(3, json.data.length)
@@ -60,10 +60,10 @@ function searchSuggestions() {
 
 //Esta funcion permite realizar la busqueda desde la barra
 function search() {
-  let container = d("resultContainer")
+  let container = document.getElementById("resultContainer")
   container.innerHTML = ""
-  let searchValue = d("searchInput").value;
-  d('results').style.display = "block"
+  let searchValue = document.getElementById("searchInput").value;
+  document.getElementById('results').style.display = "block"
   fetch(searchUrl + "&q=" + searchValue + "&limit=24")
     .then(response => response.json())
     .then(json => {
@@ -71,7 +71,7 @@ function search() {
       results = json.data
       for (let index = 0; index < results.length; index++) {
         const result = results[index];
-        
+
         let addDiv = document.createElement("div")
         addDiv.className += "gifResult"
         let addFigure = document.createElement("figure")
@@ -95,9 +95,7 @@ function search() {
 }
 
 //Esta funcion obtiene un elemento por su id
-function d(id) {
-  return document.getElementById(id);
-}
+
 
 //Esta funcion inicializa la camara
 let form = new FormData();
@@ -107,7 +105,7 @@ function getStreamAndRecord() {
     video: true,
     audio: false, video: { height: { exact: 434 } }, width: { exact: 832 }
   }).then(async function (stream) {
-    video = d('stream')
+    video = document.getElementById('stream')
     video.srcObject = stream;
     video.play();
     let recorder = RecordRTC(stream, {
@@ -150,14 +148,14 @@ function upload() {
 
 //Oculta el div de instrucciones y muestra el div de capturas
 function comenzar() {
-  d('captureOne').style.display = "none"
-  d('captureTwo').style.display = "block"
+  document.getElementById('captureOne').style.display = "none"
+  document.getElementById('captureTwo').style.display = "block"
   getStreamAndRecord()
 }
 
 function capturar() {
-  d('captureTwo').style.display = "none"
-  d('captureThree').style.display = "block"
+  document.getElementById('captureTwo').style.display = "none"
+  document.getElementById('captureThree').style.display = "block"
 }
 
 
@@ -170,7 +168,7 @@ function getRandoms() {
     fetch(randomUrl)
       .then(response => response.json())
       .then(json => {
-        let container = d("sugest")
+        let container = document.getElementById("sugest")
         let addDiv = document.createElement("div")
         addDiv.classList.add("gifFrame")
         let addFigure = document.createElement("figure")
@@ -208,7 +206,7 @@ function getTrends() {
       trends = json.data
       for (let index = 0; index < trends.length; index++) {
         const result = trends[index];
-        let container = d("trends")
+        let container = document.getElementById("trends")
         let addDiv = document.createElement("div")
         addDiv.className += "gifTrend"
         let addFigure = document.createElement("figure")
@@ -235,19 +233,19 @@ function getTrends() {
 
 //Esta funcion permite hacer el cambio a modo oscuro
 function darkMode() {
-  let barDark = d('bar')
+  let barDark = document.getElementById('bar')
   barDark.classList.remove('bar')
   barDark.className += "barDark"
-  let bodyDark = d('body')
+  let bodyDark = document.getElementById('body')
   bodyDark.className += "bodyDark"
-  let logoDark = d('logo')
+  let logoDark = document.getElementById('logo')
   logoDark.src = 'assets/gifOF_logo_dark.png'
-  let divSearchDark = d('search')
+  let divSearchDark = document.getElementById('search')
   divSearchDark.classList.remove('search')
   divSearchDark.className += "searchDark"
-  let pDark = d('pDark')
+  let pDark = document.getElementById('pDark')
   pDark.className += "pDark"
-  let inputDark = d('searchInput')
+  let inputDark = document.getElementById('searchInput')
   inputDark.className += "inputDark"
 
 }
@@ -267,7 +265,7 @@ function initEvents() {
     }
   }
 
-  var input = d("searchInput");
+  var input = document.getElementById("searchInput");
   input.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
       search()
