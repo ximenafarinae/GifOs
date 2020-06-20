@@ -3,7 +3,8 @@ const trendingUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&li
 const searchUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}`;
 const randomUrl = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`;
 const searchSuggestionsUrl = `https://api.giphy.com/v1/tags/related/`;
-const uploadUrl = `https://upload.giphy.com/v1/gifs?api_key=${apiKey}`;
+
+
 
 
 function irACrear() {
@@ -55,7 +56,6 @@ function searchSuggestions() {
       }
 
     })
-
 }
 
 //Esta funcion permite realizar la busqueda desde la barra
@@ -97,66 +97,15 @@ function search() {
 //Esta funcion obtiene un elemento por su id
 
 
-//Esta funcion inicializa la camara
-let form = new FormData();
-
-function getStreamAndRecord() {
-  navigator.mediaDevices.getUserMedia({
-    video: true,
-    audio: false, video: { height: { exact: 434 } }, width: { exact: 832 }
-  }).then(async function (stream) {
-    video = document.getElementById('stream')
-    video.srcObject = stream;
-    video.play();
-    let recorder = RecordRTC(stream, {
-      type: 'gif',
-      frameRate: 1,
-      quality: 10,
-      width: 360,
-      hidden: 240
-    });
-    recorder.startRecording();
-    const sleep = m => new Promise(r => setTimeout(r, m));
-    await sleep(3000);
-    recorder.stopRecording(function () {
-      form.append('file', recorder.getBlob(), 'myGif.gif');
-      console.log(form.get('file'))
-    });
-  });
-}
-
-function upload() {
-
-  fetch(uploadUrl, {
-    method: 'POST',
-    body: form,
-    headers: new Headers(),
-    mode: 'cors',
-    cache: 'default'
-  })
-    .then(response => response.json())
-    .then(json => {
-      let results = json.data
-      console.log(results);
-      localStorage.setItem('recordedGifId', results.id);
-
-    })
-}
 
 
 
 
-//Oculta el div de instrucciones y muestra el div de capturas
-function comenzar() {
-  document.getElementById('captureOne').style.display = "none"
-  document.getElementById('captureTwo').style.display = "block"
-  getStreamAndRecord()
-}
 
-function capturar() {
-  document.getElementById('captureTwo').style.display = "none"
-  document.getElementById('captureThree').style.display = "block"
-}
+
+
+
+
 
 
 
@@ -230,25 +179,30 @@ function getTrends() {
 
 }
 
+function getMisGuifos() {
+  fetch(`https://api.giphy.com/v1/gifs?api_key=${apiKey}`)
+}
+
+
 
 //Esta funcion permite hacer el cambio a modo oscuro
-function darkMode() {
-  let barDark = document.getElementById('bar')
-  barDark.classList.remove('bar')
-  barDark.className += "barDark"
-  let bodyDark = document.getElementById('body')
-  bodyDark.className += "bodyDark"
-  let logoDark = document.getElementById('logo')
-  logoDark.src = 'assets/gifOF_logo_dark.png'
-  let divSearchDark = document.getElementById('search')
-  divSearchDark.classList.remove('search')
-  divSearchDark.className += "searchDark"
-  let pDark = document.getElementById('pDark')
-  pDark.className += "pDark"
-  let inputDark = document.getElementById('searchInput')
-  inputDark.className += "inputDark"
+// function darkMode() {
+//   let barDark = document.getElementById('bar')
+//   barDark.classList.remove('bar')
+//   barDark.className += "barDark"
+//   let bodyDark = document.getElementById('body')
+//   bodyDark.className += "bodyDark"
+//   let logoDark = document.getElementById('logo')
+//   logoDark.src = 'assets/gifOF_logo_dark.png'
+//   let divSearchDark = document.getElementById('search')
+//   divSearchDark.classList.remove('search')
+//   divSearchDark.className += "searchDark"
+//   let pDark = document.getElementById('pDark')
+//   pDark.className += "pDark"
+//   let inputDark = document.getElementById('searchInput')
+//   inputDark.className += "inputDark"
 
-}
+// }
 
 function initEvents() {
   // Close the dropdown menu if the user clicks outside of it
@@ -266,9 +220,25 @@ function initEvents() {
   }
 
   var input = document.getElementById("searchInput");
+  let button = document.getElementById('btnSearch')
+  input.addEventListener("input", function (event) {
+    if (button.classList.contains('btnInactive')) {
+      button.classList.remove('btnInactive');
+      button.classList.add('btnActive')
+    } else if (input.value === " ") {
+      button.classList.remove('btnActive');
+      button.classList.add('btnInactive')
+    }
+
+
+  })
+
+
+  var input = document.getElementById("searchInput");
   input.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
       search()
+      document.getElementById('searchSuggestions').style.display = 'none'
     }
   })
 }

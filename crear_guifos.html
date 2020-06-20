@@ -17,7 +17,7 @@
         </div>
         <div id="createHeader">
             <div>
-               <a href="index.html"><img id="arrow" src="assets/arrow.svg" alt="flecha"></a> 
+                <a href="index.html"><img id="arrow" src="assets/arrow.svg" alt="flecha"></a>
                 <img id="logo" src="assets/gifOF_logo.png" alt="Logo GifOs">
             </div>
         </div>
@@ -58,6 +58,8 @@
         <div id="createContainer" class="recordGif">
             <div class="titleBarWide">
                 <p id="check">Un Chequeo Antes de Empezar</p>
+                <p id="checkCapture">Capturando tu guifo</p>
+                <p id="preview">Vista Previa</p>
             </div>
             <div class="preview">
                 <video id="stream"></video>
@@ -65,17 +67,6 @@
             <div id="captureBtns" class="recordBtns">
                 <button id="btnCamera" class="btnCamera"><img src="assets/camera.svg" alt="camara"></button>
                 <button id="btnCapture" class="btnCapture" onclick="capturar()">Capturar</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="captureThree">
-        <div id="recordContainer" class="recordGif">
-            <div class="titleBarWide">
-                <p id="check">Capturando tu guifo</p>
-            </div>
-            <div class="preview">
-                <video id="stream"></video>
             </div>
             <div id="recordBtns" class="recordBtns">
                 <div class="timer">
@@ -85,29 +76,16 @@
                         alt="Icono Grabando"></button>
                 <button id="btnRecording" class="btnRecording" onclick="stop()">Listo</button>
             </div>
-        </div>
-    </section>
-
-    <section id="captureFour">
-        <div id="recordContainer">
-            <div class="recordGif">
-                <div class="titleBarWide">
-                    <p id="preview">Vista Previa</p>
+            <div id="uploadOrRepeatBtns" class="uploadOrRepeatBtns">
+                <div class="timer">
+                    <span>00:00:30:06</span>
                 </div>
-                <div class="preview">
-                    <video id="stream"></video>
+                <button class="btnPlay"><img src="assets/forward.svg" alt="" srcset=""></button>
+                <div class="progressBar">
+                    <progress value="70" max="100">70%</progress>
                 </div>
-                <div id="uploadOrRepeatBtns" class="uploadOrRepeatBtns">
-                    <div class="timer">
-                        <span>00:00:30:06</span>
-                    </div>
-                    <button class="btnPlay"><img src="assets/forward.svg" alt="" srcset=""></button>
-                    <div class="progressBar">
-                        <progress value="70" max="100">70%</progress>
-                    </div>
-                    <button id="repeatBtn" class="repeatBtn">Repetir Captura</button>
-                    <button id="uploadBtn" class="uploadBtn" onclick="upload()" >Subir</button>
-                </div>
+                <button id="repeatBtn" class="repeatBtn">Repetir Captura</button>
+                <button id="uploadBtn" class="uploadBtn" onclick="upload()">Subir</button>
             </div>
         </div>
     </section>
@@ -130,7 +108,7 @@
                     <h6>Tiempo restante: <span>38 años</span> algunos minutos</h6>
                 </div>
             </div>
-            <div id="uploadOrRepeatBtns" class="uploadOrRepeatBtns">
+            <div id="cancellBtn" class="uploadOrRepeatBtns">
                 <button class="btnCancell">Cancelar</button>
             </div>
         </div>
@@ -139,7 +117,7 @@
     <section id="captureSix">
         <div class="success">
             <div class="titleBarSuccess">
-                <p id="preview">Subiendo Guifo</p>
+                <p id="uploadPreview">Subiendo Guifo</p>
             </div>
             <div class="miniPreview">
             </div>
@@ -153,9 +131,8 @@
     </section>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/R
-ecordRTC.js" type="text/javascript"></script>
-    <script src="js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
+    <script src="js/crear_guifos.js"></script>
 </body>
 </body>
 
