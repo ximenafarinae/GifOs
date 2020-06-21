@@ -1,4 +1,7 @@
 const form = new FormData();
+const apiKey = "mbqOaa1Di4W2ZDeaGsjK5COdrFxzvWSL";
+const uploadUrl = `https://upload.giphy.com/v1/gifs?api_key=${apiKey}`;
+const gifIds = []
 let recorder;
 
 function initRecorder() {
@@ -17,6 +20,7 @@ function initRecorder() {
             hidden: 240
         });
     })
+        .catch(error => console.log(error))
 }
 
 function stop() {
@@ -26,14 +30,17 @@ function stop() {
     document.getElementById('uploadOrRepeatBtns').style.display = 'grid'
     recorder.stopRecording(function () {
         form.append('file', recorder.getBlob(), 'myGif.gif');
-        console.log(form.get('file'))
-        document.getElementById('stream')
-    });
+        let objectURL = URL.createObjectURL(recorder.getBlob())
+        let gifImg = document.createElement('img')
+        gifImg.src = objectURL
+        let gifPreview = document.getElementById('gifPreview')
+        gifPreview.innerHTML = ""
+        gifPreview.appendChild(gifImg)
+    })
+        .catch(error => console.log(error))
 
 }
-const apiKey = "mbqOaa1Di4W2ZDeaGsjK5COdrFxzvWSL";
-const uploadUrl = `https://upload.giphy.com/v1/gifs?api_key=${apiKey}`;
-let gifIds = []
+
 function upload() {
     document.getElementById('captureTwo').style.display = 'none'
     document.getElementById('captureFive').style.display = 'grid'
@@ -46,12 +53,10 @@ function upload() {
     })
         .then(response => response.json())
         .then(json => {
-            let results = json.data
-            console.log(results);
-            gifIds.push(results.id)
-            console.log(gifId)
-            localStorage.setItem('recordedGifId', gifIds);
+            let gifId = json.data.id
+            saveGifId(gifId)
         })
+        .catch(error => console.log(error))
 }
 
 //Oculta el div de instrucciones y muestra el div de capturas
