@@ -8,7 +8,7 @@ const searchSuggestionsUrl = `https://api.giphy.com/v1/tags/related/`;
 
 
 function irACrear() {
-  document.location.href = '/crear_guifos.html'
+  document.location.href = 'crear_guifos.html'
 }
 
 /* When the user clicks on the button,
@@ -16,23 +16,6 @@ toggle between hiding and showing the dropdown content */
 function dropBtn() {
   document.getElementById("themes").classList.toggle("show");
 }
-
-
-//Esta funcion obtiene un elemento por su id
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Esta funcion trae los gifs a la seccion hoy te sugerimos
 
