@@ -18,7 +18,45 @@ function dropBtn() {
 }
 
 //Esta funcion trae los gifs a la seccion hoy te sugerimos
+// function getRandoms() {
+//   let gifsRandom = []
+//   for (let index = 0; index < 4; index++) {
+//     fetch(randomUrl)
+//       .then(response => response.json())
+//       .then(json => {
+//         result = json.data
+//         gifsRandom.push(result)
+//       })
+//   }
+//   createRandomsHtml()
+// }
+// function createRandomsHtml(data) {
+//   for (let index = 0; index < gifsRandom.length; index++) {
+//     let container = document.getElementById("sugest")
+//     let addDiv = document.createElement("div")
+//     addDiv.id = 'gifNro' + index
+//     addDiv.classList.add("gifFrame")
+//     let addFigure = document.createElement("figure")
+//     let addFigCaption = document.createElement("figcaption")
+//     addFigCaption.innerHTML = `#${`${json.data.title}`}`
+//     let addImg = document.createElement("img")
+//     let close = document.createElement("img")
+//     close.id = 'close' + [index]
+//     close.src = "assets/close.svg"
+//     close.classList.add("close")
+//     addImg.src = `${json.data.images.preview_gif.url}`
+//     let addButton = document.createElement("button")
+//     addButton.innerHTML = "Ver más..."
+//     container.appendChild(addDiv)
+//     addDiv.appendChild(addFigure)
+//     addFigure.appendChild(addFigCaption)
+//     addFigure.appendChild(addImg)
+//     addFigure.appendChild(close)
+//     addFigure.appendChild(addButton)
 
+//   }
+
+// }
 function getRandoms() {
   for (let index = 0; index < 4; index++) {
     fetch(randomUrl)
@@ -26,12 +64,14 @@ function getRandoms() {
       .then(json => {
         let container = document.getElementById("sugest")
         let addDiv = document.createElement("div")
+        addDiv.id = 'gifNro' + index
         addDiv.classList.add("gifFrame")
         let addFigure = document.createElement("figure")
         let addFigCaption = document.createElement("figcaption")
         addFigCaption.innerHTML = `#${`${json.data.title}`}`
         let addImg = document.createElement("img")
         let close = document.createElement("img")
+        close.id = 'close' + [index]
         close.src = "assets/close.svg"
         close.classList.add("close")
         addImg.src = `${json.data.images.preview_gif.url}`
@@ -43,7 +83,10 @@ function getRandoms() {
         addFigure.appendChild(addImg)
         addFigure.appendChild(close)
         addFigure.appendChild(addButton)
-
+        let btnClose = document.getElementById('close' + [index])
+        btnClose.addEventListener('click', () => {
+          document.getElementById('gifNro' + index).style.display = 'none'
+        })
       })
 
       .catch(error => console.log(error))
@@ -52,6 +95,10 @@ function getRandoms() {
   }
 
 }
+
+
+
+
 
 //Esta funcion trae los gifs a la seccion tendencias.
 function getTrends() {
@@ -145,7 +192,7 @@ function initEvents() {
   input.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
       search()
-      document.getElementById('searchSuggestions').style.display = 'none'
+      // document.getElementById('searchSuggestions').style.display = 'none'
     }
   })
 
