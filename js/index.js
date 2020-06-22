@@ -140,23 +140,10 @@ function getMisGuifos() {
 
 
 //Esta funcion permite hacer el cambio a modo oscuro
-// function darkMode() {
-//   let barDark = document.getElementById('bar')
-//   barDark.classList.remove('bar')
-//   barDark.className += "barDark"
-//   let bodyDark = document.getElementById('body')
-//   bodyDark.className += "bodyDark"
-//   let logoDark = document.getElementById('logo')
-//   logoDark.src = 'assets/gifOF_logo_dark.png'
-//   let divSearchDark = document.getElementById('search')
-//   divSearchDark.classList.remove('search')
-//   divSearchDark.className += "searchDark"
-//   let pDark = document.getElementById('pDark')
-//   pDark.className += "pDark"
-//   let inputDark = document.getElementById('searchInput')
-//   inputDark.className += "inputDark"
-
-// }
+function darkMode() {
+  let logo = document.getElementById('logo')
+  logo.src = 'assets/gifOf_logo_dark.png'
+}
 
 function initEvents() {
   // Close the dropdown menu if the user clicks outside of it

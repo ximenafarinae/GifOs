@@ -38,14 +38,7 @@
 //             text-decoration: underline;
 //         }
 //     }
-//     .special:hover {
-//         outline: 1px #110038 dotted;
-//         outline-offset: 6px;
-//     }
-//     .special:active {
-//         color: #11003865;
-//         outline: none;
-//     }
+//
 // }
 .dropdown {
     position: relative;
@@ -152,6 +145,14 @@
         span {
             text-decoration: underline;
         }
+    }
+    .special:hover {
+        outline: 1px #ffffff dotted;
+        outline-offset: 6px;
+    }
+    .special:active {
+        color: #ffffff65;
+        outline: none;
     }
 }
 .dropdown {
