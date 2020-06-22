@@ -1,60 +1,52 @@
-.button_bar {
-    display: flex;
-    justify-content: space-between;
-    font-family: $fontFamily;
-    img {
-        margin: 35px 0 0 91px;
-    }
-    button {
-        font-family: $fontFamily;
-        width: 131px;
-        height: 36px;
-        margin: 44px 0 0 16px;
-        background-color: $color-button;
-        border: 1px solid #110038;
-        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-    }
-    button:hover {
-        background: #e6bbe2;
-        border: 1px solid #110038;
-        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-        padding: 2px;
-        border: 1px solid #110038;
-        outline: 1px #110038 dotted;
-        outline-offset: -6px;
-    }
+// .button_bar {
+//     display: flex;
+//     justify-content: space-between;
+//     font-family: $fontFamily;
+//     img {
+//         margin: 35px 0 0 91px;
+//     }
+//     button {
+//         font-family: $fontFamily;
+//         width: 131px;
+//         height: 36px;
+//         margin: 44px 0 0 16px;
+//         background-color: $color-button;
+//         border: 1px solid #110038;
+//         box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+//     }
+//
 
-    .goDown {
-        font-family: $fontFamily;
-        margin-left: -4px;
-        width: 36px;
-        height: 36px;
-        border: 1px solid #110038;
-        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-    }
-    .special {
-        border: none;
-        background-color: #110038;
-        color: #ffffff;
-        margin-left: 16.5px;
-        margin-right: 140.5px;
-        width: 131px;
-        height: 36px;
-        box-shadow: none;
-        text-decoration: none;
-        span {
-            text-decoration: underline;
-        }
-    }
-    .special:hover {
-        outline: 1px #110038 dotted;
-        outline-offset: 6px;
-    }
-    .special:active {
-        color: #11003865;
-        outline: none;
-    }
-}
+//     .goDown {
+//         font-family: $fontFamily;
+//         margin-left: -4px;
+//         width: 36px;
+//         height: 36px;
+//         border: 1px solid #110038;
+//         box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+//     }
+//     .special {
+//         border: none;
+//         background-color: #110038;
+//         color: #ffffff;
+//         margin-left: 16.5px;
+//         margin-right: 140.5px;
+//         width: 131px;
+//         height: 36px;
+//         box-shadow: none;
+//         text-decoration: none;
+//         span {
+//             text-decoration: underline;
+//         }
+//     }
+//     .special:hover {
+//         outline: 1px #110038 dotted;
+//         outline-offset: 6px;
+//     }
+//     .special:active {
+//         color: #11003865;
+//         outline: none;
+//     }
+// }
 .dropdown {
     position: relative;
     display: inline-block;
@@ -63,13 +55,10 @@
     font-family: $fontFamily;
     display: none;
     position: absolute;
-    background-color: #e6e6e6;
-    box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
     width: 167px;
     height: 102px;
-
-    background: #e6e6e6;
-    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+    background: #b4b4b4;
+    box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
 
     a {
         text-decoration: none;
@@ -78,7 +67,7 @@
         font-size: 16px;
         min-width: 150px;
         height: 36px;
-        background-color: #f0f0f0;
+        background-color: #cccccc;
         border: 1px solid #808080;
         box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
     }
@@ -130,9 +119,18 @@
         width: 131px;
         height: 36px;
         margin: 44px 0 0 16px;
-        background-color: $color-button;
+        background-color: #ee3efe;
         border: 1px solid #110038;
-        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+        box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
+    }
+    button:hover {
+        padding: 2px;
+        border: 1px solid #110038;
+        outline: 1px #110038 dotted;
+        outline-offset: -6px;
+        background: #ce36db;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
     }
     .goDown {
         font-family: $fontFamily;
@@ -144,8 +142,8 @@
     }
     .special {
         border: none;
-        background-color: #ffffff;
-        color: #000000;
+        background-color: #110038;
+        color: #ffffff;
         margin-left: 16.5px;
         margin-right: 75px;
         box-shadow: none;
@@ -160,27 +158,6 @@
     position: relative;
     display: inline-block;
 }
-// .themeSelector {
-//     font-family: $fontFamily;
-//     display: none;
-//     position: absolute;
-//     background: #b4b4b4;
-//     box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
-//     width: 170px;
-//     height: 102px;
-
-//     a {
-//         text-decoration: none;
-//         color: #000000;
-//         font-family: $fontFamily;
-//         font-size: 16px;
-//         min-width: 150px;
-//         height: 36px;
-//         background: #cccccc;
-//         border: 1px solid #808080;
-//         box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
-//     }
-// }
 
 .show {
     margin-left: 16px;

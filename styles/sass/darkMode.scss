@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
 }
+body{
+background-color: #110038;
+}
 
 $color-button: #f7c9f3;
 $fontFamily: "Chakra Petch", sans-serif;
@@ -8,31 +11,31 @@ $gradient: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
 $boxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 
 //Barra superior
-@import 'nigth_barraHome';
+@import 'night_barraHome';
 //Header
-@import 'nigth_header';
+@import 'night_header';
 
 //Seccionsuggestions
-@import 'nigth_sectionSuggestions';
+@import 'night_sectionSuggestions';
 
 //Seccion tendencias
-@import 'nigth_sectionTrending';
+@import 'night_sectionTrending';
 
 //Seccion Crear guifos
-@import 'nigth_sectionCreateGif';
+@import 'night_sectionCreateGif';
 
 //Seccion resultados de busqueda
-@import 'nigth_searchResults';
+@import 'night_searchResults';
 
 //Seccion busqueda
-@import 'nigth_sectionSearch';
+@import 'night_sectionSearch';
 
 
 
 
 
 //Seccion Mis guifos
-@import 'nigth_sectionMisGuifos';
+@import 'night_sectionMisGuifos';
 
 
 
