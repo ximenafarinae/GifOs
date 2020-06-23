@@ -1,7 +1,7 @@
-const idsUrl= `https://api.giphy.com/v1/gifs?api_key=${apiKey}`
+const idsUrl = `https://api.giphy.com/v1/gifs?api_key=${apiKey}`
 function getMisGuifos() {
-    console.log(getGifIds())
-    fetch(idsUrl + '&ids=' + getGifIds().toLocaleString())
+  console.log(getGifIds())
+  fetch(idsUrl + '&ids=' + getGifIds().toLocaleString())
     .then(response => response.json())
     .then(json => {
       let trends = []
@@ -31,4 +31,17 @@ function getMisGuifos() {
 
 }
 
+
+function darkTheme() {
+  let tema = localStorage.getItem('tema')
+  if (tema == 1) {
+    let logo = document.getElementById('logo')
+    logo.src = 'assets/gifOf_logo_dark.png'
+    changeStylesheetNight()
+  } else if (tema == 2) {
+    logo.src = 'assets/gifOf_logo.png'
+  }
+}
+
+darkTheme()
 getMisGuifos();

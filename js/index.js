@@ -133,16 +133,40 @@ function getTrends() {
 
 }
 
-function getMisGuifos() {
-  fetch(`https://api.giphy.com/v1/gifs?api_key=${apiKey}`)
-}
+// function getMisGuifos() {
+//   fetch(`https://api.giphy.com/v1/gifs?api_key=${apiKey}`)
+// }
 
 
 
 //Esta funcion permite hacer el cambio a modo oscuro
+function nightMode() {
+  localStorage.setItem('tema', 1)
+  location.reload();
+}
+
+
 function darkMode() {
-  let logo = document.getElementById('logo')
-  logo.src = 'assets/gifOf_logo_dark.png'
+  let theme = localStorage.getItem('tema')
+  if (theme === 1) {
+    let logo = document.getElementById('logo')
+    logo.src = 'assets/gifOf_logo_dark.png'
+    let lupa = document.getElementById('lupa')
+    lupa.src = 'assets/Combined Shape.svg'
+    var input = document.getElementById("searchInput")
+    input.addEventListener('keyup', () => {
+      lupa.src = 'assets/lupa_light.svg'
+      event.stopPropagation()
+    })
+    changeStylesheetNight()
+  } 
+
+}
+
+function dayMode() {
+  localStorage.setItem('tema', 2)
+  changeStylesheetDay()
+  location.reload();
 }
 
 function initEvents() {
@@ -184,10 +208,9 @@ function initEvents() {
 
 }
 
-
-
 //Esta funcion llama a las funciones que contiene una vez que se carga el html
 (function () {
+  darkMode()
   getRandoms()
   getTrends()
   initEvents()

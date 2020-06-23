@@ -25,12 +25,12 @@
     grid-template-rows: 10% 15%;
     width: 684px;
     height: 386px;
-    background-color: #e6e6e6;
-    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+    background: #b4b4b4;
+    box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
 }
 .titleBar {
     justify-self: start;
-    background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+    background-image: $gradient;
     margin-top: 1px;
     margin-left: 3px;
     padding-left: 7px;
@@ -93,12 +93,12 @@
     grid-template-rows: 24px 451px 73px;
     width: 860px;
     height: 548px;
-    background-color: #e6e6e6;
-    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+    background: #b4b4b4;
+    box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
 }
 .titleBarWide {
     justify-self: start;
-    background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+    background-image: $gradient;
     margin-top: 1px;
     margin-left: 3px;
     padding-left: 7px;
@@ -167,9 +167,9 @@
     width: 36px;
     height: 36px;
     margin-top: 21px;
-    background: #f7c9f3;
+    background: #ee3efe;
     border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+    box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
     img {
         width: 18px;
         height: 16.5px;
@@ -183,14 +183,14 @@
     justify-self: left;
     font-family: $fontFamily;
     font-size: 16px;
-    color: #000000;
+    color: #ffffff;
     width: 144px;
     height: 36px;
     padding-top: 9px;
     margin-top: 21px;
-    background: #f7c9f3;
+    background: #ee3efe;
     border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+    box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 }
 
 .btnImgRecording {
@@ -236,7 +236,7 @@
 .repeatBtn {
     font-family: $fontFamily;
     font-size: 16px;
-    color: #110038;
+    color: #ffffff;
     letter-spacing: 0;
     text-align: center;
     line-height: 18px;
@@ -244,15 +244,15 @@
     width: 144px;
     height: 36px;
     margin-top: 21px;
-    background: #fff4fd;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+    background: #110038;
+    border: 1px solid #b4b4b4;
+    box-shadow: inset -1px -1px 0 0 #5c5c5c, inset 1px 1px 0 0 #fff4fd;
 }
 .repeatBtn:hover {
-    background: #f0e5ee;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-    outline: 1px #110038 dotted;
+    background: #110038;
+    border: 1px solid #b4b4b4;
+    box-shadow: inset -1px -1px 0 0 #5c5c5c, inset 1px 1px 0 0 #fff4fd;
+    outline: 1px #ffffff dotted;
     outline-offset: -4px;
 }
 .uploadBtn {
@@ -368,12 +368,12 @@
     display: grid;
     grid-template-columns: 55% 45%;
     grid-template-rows: 25px 223px 144px;
-    background: #e6e6e6;
-    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+    background: #b4b4b4;
+    box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
 }
 .titleBarSuccess {
     justify-self: start;
-    background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+    background-image: $gradient;
     margin-top: 1px;
     margin-left: 3px;
     padding-left: 7px;
@@ -506,10 +506,15 @@
         width: 144px;
         height: 36px;
         grid-column: 2/3;
-        background: #fff4fd;
-        border: 1px solid #110038;
-        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+        color: #ffffff;
+        background: #110038;
+        border: 1px solid #b4b4b4;
+        box-shadow: inset -1px -1px 0 0 #5c5c5c, inset 1px 1px 0 0 #fff4fd;
         font-family: $fontFamily;
+    }
+    .btnCreateGifsCancell:hover {
+        outline: 1px #ffffff dotted;
+        outline-offset: -4px;
     }
     .btnCreateGifsStart {
         justify-self: start;
@@ -517,10 +522,18 @@
         width: 144px;
         height: 36px;
         grid-column: 3/4;
-        background: #f7c9f3;
+        color: #ffffff;
+        background: #ee3efe;
         border: 1px solid #110038;
-        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+        box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
         font-family: $fontFamily;
+    }
+    .btnCreateGifsStart:hover {
+        background: #ce36db;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
+        outline: 1px #110038 dotted;
+        outline-offset: -4px;
     }
 }
 

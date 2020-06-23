@@ -10,9 +10,9 @@
         flex-direction: row;
         width: 100px;
         height: 34px;
-        background-color: #4180f6;
+        background: #2e32fb;
         border: 1px solid #4c2f99;
-        box-shadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
+        box-shadow: inset -2px -2px 0 0 #2124b3, inset 2px 2px 0 0 #ffffff;
         span {
             font-family: $fontFamily;
             font-size: 14px;
@@ -79,13 +79,14 @@
     width: 102px;
     height: 36px;
     margin-top: 6px;
-    background: #B4B4B4;
+    color: #ffffff;
+    background: #b4b4b4;
     border: 1px solid #808080;
-    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
     span {
         font-family: $fontFamily;
         font-size: 16px;
-        color: #b4b4b4;
+        color: #8f8f8f;
         letter-spacing: 0;
         line-height: 18px;
         padding: 9px 14px 9px 0px;
@@ -96,14 +97,15 @@
     width: 102px;
     height: 36px;
     margin-top: 6px;
-    background: #f7c9f3;
+    color: #ffffff;
+    background: #ee3efe;
     border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+    box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 
     span {
         font-family: $fontFamily;
         font-size: 16px;
-        color: #110038;
+        color: #ffffff;
         letter-spacing: 0;
         line-height: 18px;
         padding: 9px 14px 9px 0px;
@@ -115,16 +117,16 @@
     width: 102px;
     height: 36px;
     margin-top: 6px;
-    background: #e6bbe2;
+    background: #ce36db;
     border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+    box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
     outline: 1px #110038 dotted;
     outline-offset: -4px;
 
     span {
         font-family: $fontFamily;
         font-size: 16px;
-        color: #110038;
+        color: #ffffff;
         letter-spacing: 0;
         line-height: 18px;
         padding: 9px 14px 9px 0px;
@@ -143,15 +145,15 @@
     padding-top: 16px;
     padding-right: 127px;
     padding-bottom: 16px;
-    background-color: #e6e6e6;
+
+    background: #b4b4b4;
+    box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
     margin-left: 75px;
-    background: #e6e6e6;
-    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
     div {
         margin-left: 15px;
         width: 1052px;
         height: 36px;
-        background: #dbdbdb;
+        background: #cccccc;
         border: 1px solid #808080;
         box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
         p {

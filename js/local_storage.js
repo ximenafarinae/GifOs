@@ -18,4 +18,5 @@ function initGifIds() {
     localStorage.setItem('gifIds', JSON.stringify(gifIds))
 }
 
+
 initGifIds();

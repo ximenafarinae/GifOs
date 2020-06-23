@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/css/normalize.css">
-    <!-- <link rel="stylesheet" href="styles/css/style.css"> -->
-    <link rel="stylesheet" href="styles/css/darkMode.css">
+    <link id="day" rel="stylesheet" href="styles/css/style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
@@ -30,8 +29,8 @@
                     <button onclick="dropBtn()">Elegir tema</button>
                     <button onclick="dropBtn()" class="goDown">▼</button>
                     <div id="themes" class="themeSelector">
-                        <a href="index.html" class="day"><span>S</span>ailor Day</a>
-                        <a onclick="darkMode()" class="nigth"><span>S</span>ailor Nigth</a>
+                        <a id="sailor" onclick="dayMode()" class="day"><span>S</span>ailor Day</a>
+                        <a id="night" onclick="nightMode()" class="nigth"><span>S</span>ailor Nigth</a>
                     </div>
 
                 </div>
@@ -48,7 +47,7 @@
             <p id="pDark">Buscar</p>
             <input id="searchInput" onInput="showSuggestions()" onkeyup="searchSuggestions()" type="text"
                 placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-            <button id="btnSearch" class="btnInactive" onclick="search()"> <img src="assets/lupa_inactive.svg"
+            <button id="btnSearch" class="btnInactive" onclick="search()"> <img id="lupa" src="assets/lupa_inactive.svg"
                     alt="lupa"><span>Buscar</span></button>
         </div>
 
@@ -56,7 +55,7 @@
             <div id="searchSuggestions"></div>
         </div>
         <div id="showHashtags">
-            
+
         </div>
 
     </section>
@@ -89,7 +88,12 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
+    <script src="js/change_style.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/crear_guifos.js"></script>
+    <script src="js/mis_guifos.js"></script>
+    
+
     <script src="js/search.js"></script>
 </body>
 

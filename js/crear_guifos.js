@@ -148,11 +148,11 @@ function getUrl() {
             }
             window.getSelection().removeAllRanges()
         })
-        .catch((err)=> {
+        .catch((err) => {
             console.log('ERROR al intentar copiar la url');
-        }) 
-        
-    
+        })
+
+
 }
 
 function download() {
@@ -160,5 +160,17 @@ function download() {
     invokeSaveAsDialog(blob)
 }
 
+function darkTheme() {
+    let tema = localStorage.getItem('tema')
+    if (tema == 1) {
+        let logo = document.getElementById('logo')
+        logo.src = 'assets/gifOf_logo_dark.png'
+        let camera = document.getElementById('camera')
+        camera.src = 'assets/camera_light.svg'
+        changeStylesheetNight()
+    }
+}
+
+darkTheme();
 getMisGuifos();
 

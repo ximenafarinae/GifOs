@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/css/normalize.css">
-    <link rel="stylesheet" href="styles/css/style.css">
+    <link id="day" rel="stylesheet" href="styles/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
     <title>Crear Guifos</title>
 </head>
@@ -65,7 +65,7 @@
                 <video id="stream"></video>
             </div>
             <div id="captureBtns" class="recordBtns">
-                <button id="btnCamera" class="btnCamera"><img src="assets/camera.svg" alt="camara"></button>
+                <button id="btnCamera" class="btnCamera"><img id="camera" src="assets/camera.svg" alt="camara"></button>
                 <button id="btnCapture" class="btnCapture" onclick="capturar()">Capturar</button>
             </div>
             <div id="recordBtns" class="recordBtns">
@@ -142,7 +142,9 @@
     <script src="js/index.js"></script>
     <script src="js/mis_guifos.js"></script>
     <script src="js/local_storage.js"></script>
+    <script src="js/change_style.js"></script>
     <script src="js/crear_guifos.js"></script>
+    
 
 </body>
 </body>
