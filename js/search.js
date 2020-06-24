@@ -57,7 +57,7 @@ function getValue(p) {
     let searchInput = document.getElementById('searchInput')
     let value = document.getElementById(p.id).textContent
     searchInput.value = value
-    document.getElementById('searchSuggestions').style.display = 'none'
+   noMostrar('searchSuggestions')
 
 }
 function showHashtags() {
@@ -68,19 +68,40 @@ function showHashtags() {
         let box = document.createElement('div')
         let span = document.createElement('span')
         box.classList.add('searchTags')
+        box.id = 'hashtag' + index
         container.appendChild(box)
         box.appendChild(span)
+        span.id = 'span' + index
         span.textContent = '#' + result.textContent
+        if (span.textContent.length > 11) {
+            box.classList.add('divWide')
+        }
     }
+    hashtagsSearch()
+}
+
+//Esta funcion es la que toma el text de los botones que tienen los hashtags y realiza la busqueda
+function hashtagsSearch() {
+    for (let index = 0; index < 3; index++) {
+        let btn = document.getElementById('hashtag' + index)
+        let text = document.getElementById('span' + index)
+        btn.addEventListener('click', () => {
+            document.getElementById('showHashtags').innerHTML = ""
+            document.getElementById('searchInput').value = text.textContent.substring(1)
+            search()
+        })
+
+    }
+
 }
 
 //Esta funcion permite realizar la busqueda desde la barra
 function search() {
     let container = document.getElementById("resultContainer")
     container.innerHTML = ""
-    document.getElementById('searchSuggestions').style.display = 'none'
-    document.getElementById('suggestions').style.display = 'none'
-    document.getElementById('trending').style.display = 'none'
+    noMostrar('searchSuggestions')
+    noMostrar('suggestions')
+    noMostrar('trending')
     let searchValue = document.getElementById("searchInput").value;
     document.getElementById('results').style.display = "block"
     fetch(searchUrl + "&q=" + searchValue + "&limit=24")
@@ -88,28 +109,33 @@ function search() {
         .then(json => {
             let results = []
             results = json.data
-            for (let index = 0; index < results.length; index++) {
-                const result = results[index];
-
-                let addDiv = document.createElement("div")
-                addDiv.className += "gifResult"
-                let addFigure = document.createElement("figure")
-                let addFigCaption = document.createElement("figcaption")
-                console.log(result.title)
-                addFigCaption.innerHTML = `#${`${result.title}`}`
-                let addImg = document.createElement("img")
-                addImg.src = `${result.images.preview_gif.url}`
-                container.appendChild(addDiv)
-                addDiv.appendChild(addFigure)
-                addFigure.appendChild(addFigCaption)
-                addFigure.appendChild(addImg)
-                if ((index + 1) % 5 === 0) {
-                    addImg.src = `${result.images.downsized_large.url}`
-                    addDiv.classList.add('wideGif')
-                }
-            }
+            crearContenidoSearch(results,container)
             showHashtags()
         })
         .catch(error => console.log(error))
 }
 
+function crearContenidoSearch(results,container) {
+    for (let index = 0; index < results.length; index++) {
+        const result = results[index];
+        let addDiv = document.createElement("div")
+        addDiv.className += "gifResult"
+        let addFigure = document.createElement("figure")
+        let addFigCaption = document.createElement("figcaption")
+        addFigCaption.innerHTML = `#${`${result.title}`}`
+        let addImg = document.createElement("img")
+        addImg.src = `${result.images.preview_gif.url}`
+        container.appendChild(addDiv)
+        addDiv.appendChild(addFigure)
+        addFigure.appendChild(addFigCaption)
+        addFigure.appendChild(addImg)
+        if ((index + 1) % 5 === 0) {
+            addImg.src = `${result.images.downsized_large.url}`
+            addDiv.classList.add('wideGif')
+        }
+    }
+}
+
+function noMostrar(id) {
+    document.getElementById(id).style.display = 'none'
+}

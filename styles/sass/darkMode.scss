@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     background-color: #110038;
 }
@@ -11,27 +12,28 @@ $gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
 $boxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 
 //Barra superior
-@import 'night_BarraHome';
+// @import ;
+@import "night_BarraHome";
 //Header
-@import 'night_header';
+@import "night_header";
 
 //Seccionsuggestions
-@import 'night_sectionSuggestions';
+@import "night_sectionSuggestions";
 
 //Seccion tendencias
-@import 'night_sectionTrending';
+@import "night_sectionTrending";
 
 //Seccion Crear guifos
-@import 'night_sectionCreateGif';
+@import "night_sectionCreateGif";
 
 //Seccion resultados de busqueda
-@import 'night_searchResults';
+@import "night_searchResults";
 
 //Seccion busqueda
-@import 'night_sectionSearch';
+@import "night_sectionSearch";
 
 //Seccion Mis guifos
-@import 'night_sectionMisGuifos';
+@import "night_sectionMisGuifos";
 
 .wideGif {
     width: 586px;

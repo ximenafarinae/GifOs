@@ -31,10 +31,12 @@
     z-index: 1;
 
     figcaption {
+        box-sizing: border-box;
         width: 280px;
         height: 24px;
         margin-top: 3px;
         margin-bottom: 2px;
+        padding-top: 3px;
         background-image: $gradient;
         font-family: $fontFamily;
         white-space: nowrap;
@@ -75,17 +77,7 @@
         grid-row: 1;
         margin: 7px;
     }
-    // .btnClose {
-    //     z-index: 5;
-    //     background-color: none;
-    //     justify-self: end;
-    //     height: 16px;
-    //     margin: 0;
-    //     width: 16px;
-    //     grid-row: 1;
-    //     margin: 7px;
-    // }
-
+   
     button {
         font-family: $fontFamily;
         font-size: 14px;

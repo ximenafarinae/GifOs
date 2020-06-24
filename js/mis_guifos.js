@@ -36,10 +36,10 @@ function darkTheme() {
   let tema = localStorage.getItem('tema')
   if (tema == 1) {
     let logo = document.getElementById('logo')
-    logo.src = 'assets/gifOf_logo_dark.png'
+    logo.src = 'assets/gifOF_logo_dark.png'
     changeStylesheetNight()
   } else if (tema == 2) {
-    logo.src = 'assets/gifOf_logo.png'
+    logo.src = 'assets/gifOF_logo.png'
   }
 }
 

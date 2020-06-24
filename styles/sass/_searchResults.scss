@@ -1,17 +1,6 @@
 .results {
     padding-left: 100px;
 }
-// .resultContainer {
-//     display: grid;
-//     grid-template-columns: repeat(4, 288px);
-//     grid-template-rows: repeat(3, 290px);
-//     gap: 16px;
-// }
-// .gifResult {
-//     justify-self: center;
-//     align-self: center;
-// }
-
 
 .sectionTitleR {
     font-family: $fontFamily;
@@ -68,6 +57,10 @@
             width: 286px;
             height: 22px;
             margin: 0px;
+            align-content: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             background-image: $gradient;
             font-family: $fontFamily;
             color: #ffffff;
@@ -90,5 +83,3 @@
         z-index: 4;
     }
 }
-
-

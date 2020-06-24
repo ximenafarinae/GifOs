@@ -912,7 +912,7 @@ body {
 
 #showHashtags {
   display: none;
-  grid-template-columns: repeat(3, 100px);
+  grid-template-columns: repeat(9, 100px);
   gap: 8px;
   margin-top: 8px;
   margin-left: 75px;
@@ -936,6 +936,9 @@ body {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis; }
+  #showHashtags .divWide {
+    grid-column: span 2;
+    width: 200px; }
 
 .search {
   display: grid;

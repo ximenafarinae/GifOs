@@ -164,7 +164,7 @@ function darkTheme() {
     let tema = localStorage.getItem('tema')
     if (tema == 1) {
         let logo = document.getElementById('logo')
-        logo.src = 'assets/gifOf_logo_dark.png'
+        logo.src = 'assets/gifOF_logo_dark.png'
         let camera = document.getElementById('camera')
         camera.src = 'assets/camera_light.svg'
         changeStylesheetNight()
