@@ -3,7 +3,7 @@ const trendingUrl = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&li
 const searchUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}`;
 const randomUrl = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`;
 const searchSuggestionsUrl = `https://api.giphy.com/v1/tags/related/`;
-const randoms = ['kitty', 'dog', 'homero', 'dua lipa', 'mario', 'princess', 'cute', 'lol', 'dragon ball z']
+const randoms = ['kitty', 'dog', 'homero', 'dua lipa', 'mario', 'princess', 'cute', 'lol', 'dragon ball z', 'the office', 'michael scott', 'sailor moon', 'saint seiya', 'ranma']
 
 
 
@@ -20,6 +20,7 @@ function dropBtn() {
 
 function getRandoms() {
   let tag = randoms[Math.floor(Math.random() * randoms.length)]
+  getTag(tag)
   fetch(searchUrl + "&q=" + tag + "&limit=4")
     .then(response => response.json())
     .then(json => {
@@ -67,6 +68,17 @@ function crearContenidoSuggestions(json, index) {
 
 }
 
+function getTag(tag) {
+  let content = tag
+}
+
+// function searchVerMas(tag) {
+//   fetch(searchUrl + "&q=" + tag + "&limit=24")
+//     .then(response => response.json)
+//     .then(json => {
+
+//     })
+// }
 
 //Esta funcion trae los gifs a la seccion tendencias.
 function getTrends() {

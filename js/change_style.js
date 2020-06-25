@@ -9,9 +9,9 @@ function getDark() {
 }
 function changeStylesheetNight() {
   let style = document.getElementById('day')
-  style.href = 'styles/css/darkMode.css'
+  style.href = '/styles/sass/darkMode.css'
 }
 function changeStylesheetDay() {
   let style = document.getElementById('day')
-  style.href = '/styles/css/style.css'
+  style.href = '/styles/sass/style.css'
 }
