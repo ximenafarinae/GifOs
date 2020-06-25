@@ -103,6 +103,7 @@ function search() {
     noMostrar('suggestions')
     noMostrar('trending')
     let searchValue = document.getElementById("searchInput").value;
+    console.log(searchValue)
     document.getElementById('results').style.display = "block"
     fetch(searchUrl + "&q=" + searchValue + "&limit=24")
         .then(response => response.json())
@@ -139,3 +140,4 @@ function crearContenidoSearch(results,container) {
 function noMostrar(id) {
     document.getElementById(id).style.display = 'none'
 }
+

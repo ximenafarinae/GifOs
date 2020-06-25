@@ -25,7 +25,6 @@ function getRandoms() {
     .then(json => {
       let results = []
       results = json.data
-      console.log(results)
       for (let index = 0; index < 4; index++) {
         gif = results[index]
         crearContenidoSuggestions(gif, index)
@@ -107,8 +106,20 @@ function crearContenidoTrends(trends) {
 //Esta funcion permite hacer el cambio a modo oscuro
 function nightMode() {
   localStorage.setItem('tema', 1)
-  let style = document.getElementById('day')
-  style.href = 'styles/sass/darkMode.css'
+  changeStylesheetNight()
+  // location.reload();
+}
+
+function getDark() {
+  let tema = localStorage.getItem('tema')
+  if (tema == 1) {
+    changeStylesheetNight()
+    elementsInNightMode()
+  }
+
+}
+
+function elementsInNightMode() {
   let logo = document.getElementById('logo')
   logo.src = 'assets/gifOF_logo_dark.png'
   let lupa = document.getElementById('lupa')
@@ -118,10 +129,7 @@ function nightMode() {
     lupa.src = 'assets/lupa_light.svg'
     event.stopPropagation()
   })
-  changeStylesheetNight()
-  // location.reload();
 }
-
 
 
 
@@ -164,6 +172,10 @@ function initEvents() {
   var input = document.getElementById("searchInput");
   input.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
+      let value = input.value
+      let searchValue = []
+      searchValue.push(value)
+      localStorage.setItem('search', searchValue)
       search()
     }
   })
@@ -172,6 +184,7 @@ function initEvents() {
 
 //Esta funcion llama a las funciones que contiene una vez que se carga el html
 (function () {
+  getDark()
   getRandoms()
   getTrends()
   initEvents()

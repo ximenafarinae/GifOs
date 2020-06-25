@@ -288,18 +288,6 @@
     }
 }
 
-.progressBar {
-    width: 240px;
-    height: 24px;
-    margin-left: 4px;
-    align-self: center;
-    progress {
-        width: 240px;
-        height: 24px;
-        background: #b4b4b4;
-        box-shadow: inset 2px 2px 0 0 #fffcfc, inset -2px -2px 0 0 #000000;
-    }
-}
 .uploadingScreen {
     width: 838px;
     height: 440px;
@@ -344,6 +332,39 @@
     justify-content: center;
     width: 245px;
     height: 28px;
+}
+.progressBarContainer {
+    width: 240px;
+    height: 26px;
+    padding: 1px;
+    display: flex;
+    margin-top: 23px;
+    box-shadow: inset 2px 2px 0 0 #000000, inset -2px -2px 0 0 #ffffff;
+    justify-content: center;
+    align-content: center;
+}
+.progressBar {
+    width: 236px;
+    height: 22px;
+    // margin-left: 4px;
+    // align-self: center;
+    #myProgress {
+        width: 100%;
+        background: repeating-linear-gradient(90deg, #b4b4b4 38px, #b4b4b4 40px, #999999 30px, #999999 70px);
+    }
+
+    #myBar {
+        width: 1%;
+        height: 20px;
+        margin-top: 1.5px;
+        background: repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0) 38px,
+            rgba(0, 0, 0, 0) 40px,
+            #f7c9f3 30px,
+            #f7c9f3 70px
+        );
+    }
 }
 
 .btnCancell {

@@ -578,22 +578,33 @@ body {
   height: 20px;
   justify-self: end;
   align-self: center;
-  background: #f7c9f3;
+  background: #EE3EFE;
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
   .btnPlay img {
     margin: 1px; }
 
-.progressBar {
+.progressBarContainer {
   width: 240px;
-  height: 24px;
-  margin-left: 4px;
-  align-self: center; }
-  .progressBar progress {
-    width: 240px;
-    height: 24px;
-    background: #b4b4b4;
-    box-shadow: inset 2px 2px 0 0 #fffcfc, inset -2px -2px 0 0 #000000; }
+  height: 26px;
+  padding: 1px;
+  display: flex;
+  margin-top: 23px;
+  box-shadow: inset 2px 2px 0 0 #000000, inset -2px -2px 0 0 #ffffff;
+  justify-content: center;
+  align-content: center; }
+
+.progressBar {
+  width: 236px;
+  height: 22px; }
+  .progressBar #myProgress {
+    width: 100%;
+    background: repeating-linear-gradient(90deg, #b4b4b4 38px, #b4b4b4 40px, #979797 30px, #979797 70px); }
+  .progressBar #myBar {
+    width: 1%;
+    height: 20px;
+    margin-top: 1.5px;
+    background: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0) 38px, rgba(0, 0, 0, 0) 40px, #EE3EFE 30px, #EE3EFE 70px); }
 
 .uploadingScreen {
   width: 838px;

@@ -13,5 +13,5 @@ function changeStylesheetNight() {
 }
 function changeStylesheetDay() {
   let style = document.getElementById('day')
-  style.href = 'styles/css/style.css'
+  style.href = '/styles/css/style.css'
 }

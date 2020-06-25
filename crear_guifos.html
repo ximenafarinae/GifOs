@@ -81,8 +81,12 @@
                     <span>00:00:30:06</span>
                 </div>
                 <button class="btnPlay"><img src="assets/forward.svg" alt="" srcset=""></button>
-                <div class="progressBar">
-                    <progress value="70" max="100">70%</progress>
+                <div class="progressBarContainer">
+                    <div class="progressBar">
+                        <div id="myProgress">
+                            <div id="myBar"></div>
+                        </div>
+                    </div>
                 </div>
                 <button id="repeatBtn" class="repeatBtn" onclick="repetirCaptura()">Repetir Captura</button>
                 <button id="uploadBtn" class="uploadBtn" onclick="upload()">Subir</button>
@@ -101,9 +105,14 @@
                     <h4>Estamos subiendo tu guifo…</h4>
                     <div class="screenProgressBar">
                         <button class="btnPlay"><img src="assets/forward.svg" alt="boton play"></button>
-                        <div class="progressBar">
-                            <progress value="70" max="100">70%</progress>
+                        <div class="progressBarContainer">
+                            <div class="progressBar">
+                                <div id="myProgress">
+                                    <div id="myBar"></div>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                     <h6>Tiempo restante: <span>38 años</span> algunos minutos</h6>
                 </div>
@@ -138,13 +147,15 @@
     </section>
 
 
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
     <script src="js/index.js"></script>
     <script src="js/mis_guifos.js"></script>
     <script src="js/local_storage.js"></script>
     <script src="js/change_style.js"></script>
     <script src="js/crear_guifos.js"></script>
-    
+
 
 </body>
 </body>
