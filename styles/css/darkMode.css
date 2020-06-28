@@ -230,12 +230,7 @@ body {
   grid-template-columns: repeat(4, 286px);
   grid-template-rows: repeat(3, 298px);
   gap: 16px;
-  justify-content: center; }
-
-.trending {
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
+  margin-left: 75px; }
 
 #trending {
   margin-bottom: 150px; }
@@ -1064,17 +1059,12 @@ body {
 #showSearchSuggestions {
   display: none; }
 
-.sectionMisGuifos {
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-
 .wrapperMyGifs {
   display: grid;
   grid-template-columns: repeat(4, 288px);
   grid-template-rows: auto;
   gap: 16px;
-  justify-content: center; }
+  margin-left: 75px; }
 
 .myGifos {
   width: 280px;
