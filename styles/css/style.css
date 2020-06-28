@@ -541,6 +541,10 @@ body {
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
 
+.uploadBtn:hover {
+  outline: 1px #110038 dotted;
+  outline-offset: -4px; }
+
 .timer {
   grid-column: 1; }
 
@@ -640,6 +644,10 @@ body {
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
 
+.btnCancell:hover {
+  outline: 1px #110038 dotted;
+  outline-offset: -4px; }
+
 .success {
   width: 721px;
   height: 391px;
@@ -706,6 +714,14 @@ body {
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
 
+.copyGif:hover {
+  outline: 1px #110038 dotted;
+  outline-offset: -4px; }
+
+.downloadGif:hover {
+  outline: 1px #110038 dotted;
+  outline-offset: -4px; }
+
 .downloadGif {
   width: 256px;
   height: 36px;
@@ -738,6 +754,10 @@ body {
     letter-spacing: 0;
     text-align: center;
     line-height: 18px; }
+
+.done:hover {
+  outline: 1px #110038 dotted;
+  outline-offset: -4px; }
 
 #checkCapture {
   display: none; }
@@ -782,6 +802,9 @@ body {
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
     font-family: "Chakra Petch", sans-serif; }
+  .createBtnBar .btnCreateGifsCancell:hover {
+    outline: 1px #110038 dotted;
+    outline-offset: -4px; }
   .createBtnBar .btnCreateGifsStart {
     justify-self: start;
     align-self: center;
@@ -792,6 +815,9 @@ body {
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
     font-family: "Chakra Petch", sans-serif; }
+  .createBtnBar .btnCreateGifsStart:hover {
+    outline: 1px #110038 dotted;
+    outline-offset: -4px; }
 
 #captureOne {
   padding-left: 378px;
@@ -1054,8 +1080,7 @@ body {
 
 .sectionMisGuifos {
   display: flex;
-  flex-direction: column;
-  align-items: center; }
+  flex-direction: column; }
 
 .wrapperMyGifs {
   display: grid;

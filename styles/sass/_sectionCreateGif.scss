@@ -271,6 +271,10 @@
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 }
+.uploadBtn:hover {
+    outline: 1px #110038 dotted;
+    outline-offset: -4px;
+}
 .timer {
     grid-column: 1;
 }
@@ -327,12 +331,12 @@
             text-decoration: line-through;
         }
     }
-    .progressBar{
+    .progressBar {
         width: 324px;
     }
     #myProgressI {
         width: 100%;
-        background: repeating-linear-gradient(90deg, #b4b4b4 38px, #b4b4b4 40px, #999999 30px, #999999 70px); 
+        background: repeating-linear-gradient(90deg, #b4b4b4 38px, #b4b4b4 40px, #999999 30px, #999999 70px);
     }
 
     #myBarI {
@@ -379,8 +383,6 @@
             #f7c9f3 70px
         );
     }
-   
-    
 }
 
 .btnCancell {
@@ -398,6 +400,10 @@
     background: #fff4fd;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+}
+.btnCancell:hover {
+    outline: 1px #110038 dotted;
+    outline-offset: -4px;
 }
 .success {
     width: 721px;
@@ -468,6 +474,14 @@
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 }
+.copyGif:hover{
+    outline: 1px #110038 dotted;
+    outline-offset: -4px;
+}
+.downloadGif:hover{
+    outline: 1px #110038 dotted;
+    outline-offset: -4px;
+}
 .downloadGif {
     width: 256px;
     height: 36px;
@@ -501,6 +515,10 @@
         text-align: center;
         line-height: 18px;
     }
+}
+.done:hover {
+    outline: 1px #110038 dotted;
+    outline-offset: -4px;
 }
 #checkCapture {
     display: none;
@@ -548,6 +566,10 @@
         box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
         font-family: $fontFamily;
     }
+    .btnCreateGifsCancell:hover {
+        outline: 1px #110038 dotted;
+        outline-offset: -4px;
+    }
     .btnCreateGifsStart {
         justify-self: start;
         align-self: center;
@@ -558,6 +580,10 @@
         border: 1px solid #110038;
         box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
         font-family: $fontFamily;
+    }
+    .btnCreateGifsStart:hover {
+        outline: 1px #110038 dotted;
+        outline-offset: -4px;
     }
 }
 

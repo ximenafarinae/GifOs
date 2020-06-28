@@ -258,7 +258,7 @@
 .uploadBtn {
     font-family: $fontFamily;
     font-size: 16px;
-    color: #110038;
+    color: #ffffff;
     letter-spacing: 0;
     text-align: center;
     line-height: 18px;
@@ -267,9 +267,13 @@
     height: 36px;
     margin-top: 21px;
     margin-right: 16px;
-    background: #f7c9f3;
+    background: #ce36db;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+}
+.uploadBtn:hover {
+        outline: 1px #ffffff dotted;
+        outline-offset: -4px;
 }
 .timer {
     grid-column: 1;
@@ -398,6 +402,10 @@
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 }
+.btnCancell:hover {
+    outline: 1px #ffffff dotted;
+    outline-offset: -4px;
+}
 .success {
     width: 721px;
     height: 391px;
@@ -467,6 +475,10 @@
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 }
+.copyGif:hover{
+    outline: 1px #110038 dotted;
+    outline-offset: -4px;
+}
 .downloadGif {
     width: 256px;
     height: 36px;
@@ -475,6 +487,10 @@
     background: #fff4fd;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+}
+.downloadGif:hover{
+    outline: 1px #110038 dotted;
+    outline-offset: -4px;
 }
 .done {
     display: flex;
@@ -500,6 +516,10 @@
         text-align: center;
         line-height: 18px;
     }
+}
+.done:hover {
+    outline: 1px #110038 dotted;
+    outline-offset: -4px;
 }
 #checkCapture {
     display: none;

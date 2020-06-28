@@ -526,7 +526,7 @@ body {
 .uploadBtn {
   font-family: "Chakra Petch", sans-serif;
   font-size: 16px;
-  color: #110038;
+  color: #ffffff;
   letter-spacing: 0;
   text-align: center;
   line-height: 18px;
@@ -535,9 +535,13 @@ body {
   height: 36px;
   margin-top: 21px;
   margin-right: 16px;
-  background: #f7c9f3;
+  background: #ce36db;
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
+
+.uploadBtn:hover {
+  outline: 1px #ffffff dotted;
+  outline-offset: -4px; }
 
 .timer {
   grid-column: 1; }
@@ -638,6 +642,10 @@ body {
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
 
+.btnCancell:hover {
+  outline: 1px #ffffff dotted;
+  outline-offset: -4px; }
+
 .success {
   width: 721px;
   height: 391px;
@@ -704,6 +712,10 @@ body {
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
 
+.copyGif:hover {
+  outline: 1px #110038 dotted;
+  outline-offset: -4px; }
+
 .downloadGif {
   width: 256px;
   height: 36px;
@@ -712,6 +724,10 @@ body {
   background: #fff4fd;
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff; }
+
+.downloadGif:hover {
+  outline: 1px #110038 dotted;
+  outline-offset: -4px; }
 
 .done {
   display: flex;
@@ -736,6 +752,10 @@ body {
     letter-spacing: 0;
     text-align: center;
     line-height: 18px; }
+
+.done:hover {
+  outline: 1px #110038 dotted;
+  outline-offset: -4px; }
 
 #checkCapture {
   display: none; }
@@ -883,7 +903,10 @@ body {
       color: #ffffff;
       font-size: 14px;
       z-index: 5;
-      justify-self: center; }
+      justify-self: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
     .gifResult figure:hover img {
       width: 286px;
       height: 296px;
@@ -936,7 +959,7 @@ body {
   box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
   padding-bottom: 12px;
   margin-left: 75px;
-  margin-right: 130px;
+  margin-right: 70px;
   margin-top: 16px; }
   .search p {
     font-family: "Chakra Petch", sans-serif;

@@ -77,7 +77,7 @@ function showHashtags() {
                 box.classList.add('divWide')
             }
         }
-    }else{
+    } else {
         for (let index = 0; index < 6; index++) {
             let result = searchs[index]
             console.log(result)
@@ -100,10 +100,12 @@ function showHashtags() {
 
 //Esta funcion es la que toma el text de los botones que tienen los hashtags y realiza la busqueda
 function hashtagsSearch() {
-    for (let index = 0; index < 6; index++) {
+    for (let index = 0; index < 8; index++) {
         let btn = document.getElementById('hashtag' + index)
+        let text = document.getElementById('span' + index)
         btn.addEventListener('click', () => {
             document.getElementById('showHashtags').innerHTML = ""
+            document.getElementById('searchInput').value = text.textContent.substring(1)
             search()
         })
 

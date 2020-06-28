@@ -1,16 +1,6 @@
 .results {
     padding-left: 100px;
 }
-// .resultContainer {
-//     display: grid;
-//     grid-template-columns: repeat(4, 288px);
-//     grid-template-rows: repeat(3, 290px);
-//     gap: 16px;
-// }
-// .gifResult {
-//     justify-self: center;
-//     align-self: center;
-// }
 
 
 .sectionTitleR {
@@ -74,6 +64,9 @@
             font-size: 14px;
             z-index: 5;
             justify-self: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         img {
             width: 286px;
