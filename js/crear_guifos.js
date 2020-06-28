@@ -64,6 +64,8 @@ function volver() {
 function upload() {
     document.getElementById('captureTwo').style.display = 'none'
     document.getElementById('captureFive').style.display = 'grid'
+    document.getElementById('preview').style.display = 'none'
+    document.getElementById('previewUpload').style.display = 'block'
     fetch(uploadUrl, {
         method: 'POST',
         body: form,
