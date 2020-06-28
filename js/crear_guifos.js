@@ -54,6 +54,14 @@ function cameraOff() {
 
 }
 
+function volver() {
+    let boton = document.getElementById('cancell')
+    boton.addEventListener("click",function() {
+        window.history.back();
+      }
+      ,false);
+}
+
 function upload() {
     document.getElementById('captureTwo').style.display = 'none'
     document.getElementById('captureFive').style.display = 'grid'
