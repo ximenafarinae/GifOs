@@ -78,8 +78,8 @@ function showHashtags() {
             }
         }
     } else {
-        for (let index = 0; index < 6; index++) {
-            let result = searchs[index]
+        for (let index = 0; index < 8; index++) {
+            let result = searchs[Math.floor(Math.random() * searchs.length)]
             console.log(result)
             let box = document.createElement('div')
             let span = document.createElement('span')
