@@ -34,8 +34,8 @@
     }
     .special {
         border: none;
-        background-color: #110038;
-        color: #ffffff;
+        background-color: #ffffff;
+        color: #000000;
         margin-left: 16.5px;
         margin-right: 140.5px;
         width: 131px;
@@ -59,6 +59,7 @@
     position: relative;
     display: inline-block;
 }
+
 .themeSelector {
     font-family: $fontFamily;
     display: none;
@@ -94,10 +95,12 @@
     padding: 7px 56px 7px 16px;
 }
 
+
 .nigth {
     padding: 7px 40px 7px 16px;
     margin-top: 5px;
 }
+
 
 .nigth:hover {
     color: #ffffff;
@@ -108,6 +111,7 @@
         text-decoration: underline;
     }
 }
+
 .day:hover {
     color: #ffffff;
     background: #2e32fb;
@@ -117,50 +121,6 @@
         text-decoration: underline;
     }
 }
-
-.button_bar {
-    display: flex;
-    justify-content: space-between;
-    font-family: $fontFamily;
-    img {
-        margin: 35px 0 0 91px;
-    }
-    button {
-        font-family: $fontFamily;
-        width: 131px;
-        height: 36px;
-        margin: 44px 0 0 16px;
-        background-color: $color-button;
-        border: 1px solid #110038;
-        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-    }
-    .goDown {
-        font-family: $fontFamily;
-        margin-left: -4px;
-        width: 36px;
-        height: 36px;
-        border: 1px solid #110038;
-        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-    }
-    .special {
-        border: none;
-        background-color: #ffffff;
-        color: #000000;
-        margin-left: 16.5px;
-        margin-right: 75px;
-        box-shadow: none;
-        text-decoration: none;
-
-        span {
-            text-decoration: underline;
-        }
-    }
-}
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
 .show {
     margin-left: 16px;
     display: grid;
@@ -171,33 +131,6 @@
     padding: 10px;
 }
 
-.day {
-    padding: 7px 56px 7px 16px;
-}
-
-.nigth {
-    padding: 7px 40px 7px 16px;
-    margin-top: 5px;
-}
-
-.nigth:hover {
-    color: #ffffff;
-    background: #2e32fb;
-    border: 1px solid rgba(51, 53, 143, 0.2);
-    box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
-    span {
-        text-decoration: underline;
-    }
-}
-.day:hover {
-    color: #ffffff;
-    background: #2e32fb;
-    border: 1px solid rgba(51, 53, 143, 0.2);
-    box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
-    span {
-        text-decoration: underline;
-    }
-}
 //Boton crear Guifos
 .btnGoCreate:hover {
     padding: 2px;

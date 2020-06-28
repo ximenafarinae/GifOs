@@ -6,13 +6,5 @@
     color: #ffffff;
     padding: 3px 0px 4px 7px;
     margin: 1px;
-    @media (min-width: 1368px) {
-        background-image: $gradient;
-        box-shadow: 0 1px 0 0 #110038;
-        font-family: $fontFamily;
-        font-size: 12px;
-        color: #ffffff;
-        padding: 3px 0px 4px 7px;
-        margin: 1px;
-    }
+
 }
