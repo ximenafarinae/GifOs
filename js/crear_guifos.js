@@ -44,8 +44,8 @@ function stopVideo() {
 }
 
 function cameraOff() {
-    let stream = document.getElementById('stream').srcObject 
-    if ( stream != null) {
+    let stream = document.getElementById('stream').srcObject
+    if (stream != null) {
         stream.getTracks().forEach(track => {
             track.stop();
         })
@@ -56,10 +56,9 @@ function cameraOff() {
 
 function volver() {
     let boton = document.getElementById('cancell')
-    boton.addEventListener("click",function() {
+    boton.addEventListener("click", () => {
         window.history.back();
-      }
-      ,false);
+    });
 }
 
 function upload() {

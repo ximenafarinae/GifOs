@@ -3,8 +3,7 @@
 
 body {
   background-color: #fbeffa;
-  display: grid;
-  justify-content: center; }
+  display: grid; }
 
 .bar {
   background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
@@ -49,7 +48,7 @@ body {
     background-color: #fbeffa;
     color: #000000;
     margin-left: 16.5px;
-    margin-right: 140.5px;
+    margin-right: 70px;
     width: 131px;
     height: 36px;
     box-shadow: none;
@@ -932,7 +931,7 @@ body {
   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
   padding-bottom: 12px;
   margin-left: 75px;
-  margin-right: 130px;
+  margin-right: 70px;
   margin-top: 16px; }
   .search p {
     font-family: "Chakra Petch", sans-serif;
