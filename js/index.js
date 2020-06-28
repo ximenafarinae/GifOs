@@ -20,7 +20,7 @@ function dropBtn() {
 
 function getRandoms() {
   let tag = randoms[Math.floor(Math.random() * randoms.length)]
-  getTag(tag)
+  localStorage.setItem('tag', tag)
   fetch(searchUrl + "&q=" + tag + "&limit=4")
     .then(response => response.json())
     .then(json => {
@@ -30,11 +30,8 @@ function getRandoms() {
         gif = results[index]
         crearContenidoSuggestions(gif, index)
       }
-
     })
     .catch(error => console.log(error))
-
-
 }
 
 function crearContenidoSuggestions(json, index) {
@@ -65,20 +62,10 @@ function crearContenidoSuggestions(json, index) {
   btnClose.addEventListener('click', () => {
     document.getElementById('gifNro' + index).style.display = 'none'
   })
+  let btnVerMas = document.getElementById('btnVerMas' + [index])
+  btnVerMas.addEventListener('click', verMas)
 
 }
-
-function getTag(tag) {
-  let content = tag
-}
-
-// function searchVerMas(tag) {
-//   fetch(searchUrl + "&q=" + tag + "&limit=24")
-//     .then(response => response.json)
-//     .then(json => {
-
-//     })
-// }
 
 //Esta funcion trae los gifs a la seccion tendencias.
 function getTrends() {
@@ -115,41 +102,14 @@ function crearContenidoTrends(trends) {
   }
 }
 
-//Esta funcion permite hacer el cambio a modo oscuro
-function nightMode() {
-  localStorage.setItem('tema', 1)
-  changeStylesheetNight()
-  // location.reload();
-}
 
-function getDark() {
-  let tema = localStorage.getItem('tema')
-  if (tema == 1) {
-    changeStylesheetNight()
-    elementsInNightMode()
-  }
-
-}
-
-function elementsInNightMode() {
-  let logo = document.getElementById('logo')
-  logo.src = 'assets/gifOF_logo_dark.png'
-  let lupa = document.getElementById('lupa')
-  lupa.src = 'assets/lupaDark.svg'
-  var input = document.getElementById("searchInput")
-  input.addEventListener('keyup', () => {
-    lupa.src = 'assets/lupa_light.svg'
-    event.stopPropagation()
-  })
+function verMas() {
+  let tag = localStorage.getItem('tag')
+  document.getElementById('searchInput').value = tag
+  search()
 }
 
 
-
-function dayMode() {
-  localStorage.setItem('tema', 2)
-  changeStylesheetDay()
-  location.reload();
-}
 
 function initEvents() {
   // Close the dropdown menu if the user clicks outside of it
@@ -176,18 +136,11 @@ function initEvents() {
       button.classList.remove('btnActive');
       button.classList.add('btnInactive')
     }
-
-
   })
-
 
   var input = document.getElementById("searchInput");
   input.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
-      let value = input.value
-      let searchValue = []
-      searchValue.push(value)
-      localStorage.setItem('search', searchValue)
       search()
     }
   })

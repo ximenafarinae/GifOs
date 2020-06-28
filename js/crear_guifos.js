@@ -37,22 +37,7 @@ function stop() {
         gifPreview.innerHTML = ""
         gifPreview.appendChild(gifImg)
     })
-    // function vidOff() {
-    //     navigator.mediaDevices.getUserMedia({
-    //         video: true,
-    //         audio: false, video: { height: 432, width: 830 }
-    //     }).then(function (stream) {
-    //         video = document.getElementById('stream')
-    //         video.srcObject = "";
-    //         video.pause();
-    //         localstream.stop();
-    //     })
-
-
-    // }
-
-    // .catch(error => console.log(error))
-    move()
+    move('myBar')
 
 }
 
@@ -71,12 +56,9 @@ function upload() {
             let gifId = json.data.id
             saveGifId(gifId)
             uploadTime()
-
         })
-
-
     // .catch(error => console.log(error))
-    move()
+
 }
 
 function uploadTime() {
@@ -173,23 +155,32 @@ function darkTheme() {
     }
 }
 var i = 0
-function move() {
+function move(idBar) {
     if (i == 0) {
-      i = 1;
-      var elem = document.getElementById("myBar");
-      var width = 1;
-      var id = setInterval(frame, 40);
-      function frame() {
-        if (width >= 100) {
-          clearInterval(id);
-          i = 0;
-        } else {
-          width++;
-          elem.style.width = width + "%";
+        i = 1;
+        var elem = document.getElementById(idBar);
+        var width = 1;
+        var id = setInterval(frame, 40);
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id);
+                i = 0;
+            } else {
+                width++;
+                elem.style.width = width + "%";
+            }
         }
-      }
     }
-  }
+}
+
+
+// function myInit() {
+//     let btnUpload = document.getElementById('uploadBtn')
+//     btnUpload.addEventListener('click',   )
+
+// }
+
+// myInit()
 
 darkTheme();
 getMisGuifos();

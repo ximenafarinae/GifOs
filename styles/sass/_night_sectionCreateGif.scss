@@ -307,8 +307,24 @@
         width: 100%;
         background: repeating-linear-gradient(90deg, #b4b4b4 38px, #b4b4b4 40px, #979797 30px, #979797 70px);
     }
+    #myProgressI{
+        width: 100%;
+        background: repeating-linear-gradient(90deg, #b4b4b4 38px, #b4b4b4 40px, #979797 30px, #979797 70px); 
+    }
 
     #myBar {
+        width: 1%;
+        height: 20px;
+        margin-top: 1.5px;
+        background: repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0) 38px,
+            rgba(0, 0, 0, 0) 40px,
+            #EE3EFE 30px,
+            #EE3EFE 70px
+        );
+    }
+    #myBarI {
         width: 1%;
         height: 20px;
         margin-top: 1.5px;
@@ -329,6 +345,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     background: #ffffff;
     border: 1px solid #979797;
     box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
@@ -354,17 +371,15 @@
         letter-spacing: 0;
         text-align: center;
         line-height: 14px;
-        margin-top: 10px;
+        margin-top: 35px;
         span {
             text-decoration: line-through;
         }
     }
-}
-.screenProgressBar {
-    display: inline-flex;
-    justify-content: center;
-    width: 245px;
-    height: 28px;
+    .progressBar{
+        width: 324px;
+    }
+   
 }
 
 .btnCancell {

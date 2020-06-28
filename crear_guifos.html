@@ -89,7 +89,8 @@
                     </div>
                 </div>
                 <button id="repeatBtn" class="repeatBtn" onclick="repetirCaptura()">Repetir Captura</button>
-                <button id="uploadBtn" class="uploadBtn" onclick="upload()">Subir</button>
+                <button id="uploadBtn" class="uploadBtn"
+                    onclick="upload(), move('myBarI')">Subir</button>
             </div>
         </div>
     </section>
@@ -103,16 +104,12 @@
                 <div class="uploadingScreen">
                     <img src="assets/globe_img.png" alt="globo terraqueo">
                     <h4>Estamos subiendo tu guifo…</h4>
-                    <div class="screenProgressBar">
-                        <button class="btnPlay"><img src="assets/forward.svg" alt="boton play"></button>
-                        <div class="progressBarContainer">
-                            <div class="progressBar">
-                                <div id="myProgress">
-                                    <div id="myBar"></div>
-                                </div>
+                    <div class="progressBarContainer">
+                        <div class="progressBar">
+                            <div id="myProgressI">
+                                <div id="myBarI"></div>
                             </div>
                         </div>
-
                     </div>
                     <h6>Tiempo restante: <span>38 años</span> algunos minutos</h6>
                 </div>

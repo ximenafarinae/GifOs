@@ -14,14 +14,12 @@ function showSuggestions() {
 //Hacer una funcion que me traiga las sugerencias de busqueda
 function searchSuggestions() {
     let hashtags = document.getElementById('showHashtags')
-
     hashtags.style.display = "none"
     hashtags.innerHTML = ""
     let term = document.getElementById('searchInput').value
     if (term === "") {
         return
     }
-
     fetch(searchSuggestionsUrl + term + `?api_key=${apiKey}`)
 
         .then(response => response.json())
@@ -43,9 +41,7 @@ function searchSuggestions() {
                 searchSuggestions.appendChild(result)
                 resultName.addEventListener('click', handleClick)
             }
-
         })
-
 }
 
 function handleClick(event) {
@@ -57,14 +53,17 @@ function getValue(p) {
     let searchInput = document.getElementById('searchInput')
     let value = document.getElementById(p.id).textContent
     searchInput.value = value
-   noMostrar('searchSuggestions')
+    noMostrar('searchSuggestions')
 
 }
 function showHashtags() {
     let container = document.getElementById('showHashtags')
     container.style.display = 'grid'
-    for (let index = 0; index < 3; index++) {
-        let result = document.getElementById('resultName' + index)
+    let searchs = JSON.parse(localStorage.getItem('searchHData')) 
+    console.log(searchs)
+    for (let index = 0; index < 6; index++) {
+        let result = searchs[index]
+        console.log(result)
         let box = document.createElement('div')
         let span = document.createElement('span')
         box.classList.add('searchTags')
@@ -72,7 +71,7 @@ function showHashtags() {
         container.appendChild(box)
         box.appendChild(span)
         span.id = 'span' + index
-        span.textContent = '#' + result.textContent
+        span.textContent = '#' + result
         if (span.textContent.length > 11) {
             box.classList.add('divWide')
         }
@@ -82,7 +81,7 @@ function showHashtags() {
 
 //Esta funcion es la que toma el text de los botones que tienen los hashtags y realiza la busqueda
 function hashtagsSearch() {
-    for (let index = 0; index < 3; index++) {
+    for (let index = 0; index < 6; index++) {
         let btn = document.getElementById('hashtag' + index)
         let text = document.getElementById('span' + index)
         btn.addEventListener('click', () => {
@@ -92,7 +91,6 @@ function hashtagsSearch() {
         })
 
     }
-
 }
 
 //Esta funcion permite realizar la busqueda desde la barra
@@ -102,21 +100,23 @@ function search() {
     noMostrar('searchSuggestions')
     noMostrar('suggestions')
     noMostrar('trending')
-    let searchValue = document.getElementById("searchInput").value;
-    console.log(searchValue)
+    let searchValue = document.getElementById("searchInput").value
+    if (searchValue != "") {
+        saveSearchHistory(searchValue)
+    }
     document.getElementById('results').style.display = "block"
     fetch(searchUrl + "&q=" + searchValue + "&limit=24")
         .then(response => response.json())
         .then(json => {
             let results = []
             results = json.data
-            crearContenidoSearch(results,container)
+            crearContenidoSearch(results, container)
             showHashtags()
         })
         .catch(error => console.log(error))
 }
 
-function crearContenidoSearch(results,container) {
+function crearContenidoSearch(results, container) {
     for (let index = 0; index < results.length; index++) {
         const result = results[index];
         let addDiv = document.createElement("div")
