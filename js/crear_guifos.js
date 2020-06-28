@@ -4,6 +4,7 @@ const gifByIdUrl = `https://api.giphy.com/v1/gifs/`
 const gifIds = []
 let recorder;
 
+
 function initRecorder() {
     navigator.mediaDevices.getUserMedia({
         video: true,
@@ -23,7 +24,8 @@ function initRecorder() {
     // .catch(error => console.log(error))
 }
 
-function stop() {
+function stopVideo() {
+    cameraOff()
     document.getElementById('checkCapture').style.display = 'none'
     document.getElementById('recordBtns').style.display = ''
     document.getElementById('preview').style.display = 'block'
@@ -38,6 +40,17 @@ function stop() {
         gifPreview.appendChild(gifImg)
     })
     move('myBar')
+
+}
+
+function cameraOff() {
+    let stream = document.getElementById('stream').srcObject 
+    if ( stream != null) {
+        stream.getTracks().forEach(track => {
+            track.stop();
+        })
+    }
+
 
 }
 
@@ -173,14 +186,6 @@ function move(idBar) {
     }
 }
 
-
-// function myInit() {
-//     let btnUpload = document.getElementById('uploadBtn')
-//     btnUpload.addEventListener('click',   )
-
-// }
-
-// myInit()
 
 darkTheme();
 getMisGuifos();
