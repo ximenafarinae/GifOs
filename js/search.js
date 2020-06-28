@@ -59,23 +59,42 @@ function getValue(p) {
 function showHashtags() {
     let container = document.getElementById('showHashtags')
     container.style.display = 'grid'
-    let searchs = JSON.parse(localStorage.getItem('searchHData')) 
+    let searchs = JSON.parse(localStorage.getItem('searchHData'))
     console.log(searchs)
-    for (let index = 0; index < 6; index++) {
-        let result = searchs[index]
-        console.log(result)
-        let box = document.createElement('div')
-        let span = document.createElement('span')
-        box.classList.add('searchTags')
-        box.id = 'hashtag' + index
-        container.appendChild(box)
-        box.appendChild(span)
-        span.id = 'span' + index
-        span.textContent = '#' + result
-        if (span.textContent.length > 11) {
-            box.classList.add('divWide')
+    if (searchs.length < 6) {
+        for (let index = 0; index < searchs.length; index++) {
+            let result = searchs[index]
+            console.log(result)
+            let box = document.createElement('div')
+            let span = document.createElement('span')
+            box.classList.add('searchTags')
+            box.id = 'hashtag' + index
+            container.appendChild(box)
+            box.appendChild(span)
+            span.id = 'span' + index
+            span.textContent = '#' + result
+            if (span.textContent.length > 11) {
+                box.classList.add('divWide')
+            }
+        }
+    }else{
+        for (let index = 0; index < 6; index++) {
+            let result = searchs[index]
+            console.log(result)
+            let box = document.createElement('div')
+            let span = document.createElement('span')
+            box.classList.add('searchTags')
+            box.id = 'hashtag' + index
+            container.appendChild(box)
+            box.appendChild(span)
+            span.id = 'span' + index
+            span.textContent = '#' + result
+            if (span.textContent.length > 11) {
+                box.classList.add('divWide')
+            }
         }
     }
+
     hashtagsSearch()
 }
 
@@ -83,10 +102,8 @@ function showHashtags() {
 function hashtagsSearch() {
     for (let index = 0; index < 6; index++) {
         let btn = document.getElementById('hashtag' + index)
-        let text = document.getElementById('span' + index)
         btn.addEventListener('click', () => {
             document.getElementById('showHashtags').innerHTML = ""
-            document.getElementById('searchInput').value = text.textContent.substring(1)
             search()
         })
 

@@ -4,6 +4,13 @@
     grid-template-rows: repeat(3, 298px);
     gap: 16px;
     justify-content: center;
+    @media  (max-width: 1368px) {
+        display: grid;
+    grid-template-columns: repeat(4, 286px);
+    grid-template-rows: repeat(3, 298px);
+    gap: 16px;
+    justify-content: center;
+    }
 }
 
 .trending {
