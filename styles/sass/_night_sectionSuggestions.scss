@@ -3,7 +3,7 @@
     grid-template-columns: repeat(4, 288px);
     grid-template-rows: repeat(1, 313px);
     gap: 16px;
-    justify-content: center;
+    margin-left: 75px;
 }
 
 .sectionTitle {
@@ -75,17 +75,6 @@
         grid-row: 1;
         margin: 7px;
     }
-    // .btnClose {
-    //     z-index: 5;
-    //     background-color: none;
-    //     justify-self: end;
-    //     height: 16px;
-    //     margin: 0;
-    //     width: 16px;
-    //     grid-row: 1;
-    //     margin: 7px;
-    // }
-
     button {
         font-family: $fontFamily;
         font-size: 14px;

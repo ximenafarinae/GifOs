@@ -1,49 +1,66 @@
-// .button_bar {
-//     display: flex;
-//     justify-content: space-between;
-//     font-family: $fontFamily;
-//     img {
-//         margin: 35px 0 0 91px;
-//     }
-//     button {
-//         font-family: $fontFamily;
-//         width: 131px;
-//         height: 36px;
-//         margin: 44px 0 0 16px;
-//         background-color: $color-button;
-//         border: 1px solid #110038;
-//         box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-//     }
-//
+.button_bar {
+    display: flex;
+    justify-content: space-between;
+    font-family: $fontFamily;
+    img {
+        margin: 35px 0 0 91px;
+    }
+    button {
+        font-family: $fontFamily;
+        width: 131px;
+        height: 36px;
+        margin: 44px 0 0 16px;
+        background-color: #ee3efe;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
+    }
+    button:hover {
+        padding: 2px;
+        border: 1px solid #110038;
+        outline: 1px #110038 dotted;
+        outline-offset: -6px;
+        background: #ce36db;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
+    }
 
-//     .goDown {
-//         font-family: $fontFamily;
-//         margin-left: -4px;
-//         width: 36px;
-//         height: 36px;
-//         border: 1px solid #110038;
-//         box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-//     }
-//     .special {
-//         border: none;
-//         background-color: #110038;
-//         color: #ffffff;
-//         margin-left: 16.5px;
-//         margin-right: 140.5px;
-//         width: 131px;
-//         height: 36px;
-//         box-shadow: none;
-//         text-decoration: none;
-//         span {
-//             text-decoration: underline;
-//         }
-//     }
-//
-// }
+    .goDown {
+        font-family: $fontFamily;
+        margin-left: -4px;
+        width: 36px;
+        height: 36px;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+    }
+    .special {
+        border: none;
+        background-color: #110038;
+        color: #ffffff;
+        margin-left: 16.5px;
+        margin-right: 140.5px;
+        width: 131px;
+        height: 36px;
+        box-shadow: none;
+        text-decoration: none;
+        span {
+            text-decoration: underline;
+        }
+    }
+    .special:hover {
+        outline: 1px #ffffff dotted;
+        outline-offset: 6px;
+    }
+
+    .special:active {
+        color: #ffffff65;
+        outline: none;
+    }
+}
 .dropdown {
     position: relative;
     display: inline-block;
 }
+
 .themeSelector {
     font-family: $fontFamily;
     display: none;
@@ -76,6 +93,7 @@
     padding: 7px 56px 7px 16px;
 }
 
+
 .nigth {
     padding: 7px 40px 7px 16px;
     margin-top: 5px;
@@ -90,6 +108,7 @@
         text-decoration: underline;
     }
 }
+
 .day:hover {
     color: #ffffff;
     background: #2e32fb;
@@ -98,67 +117,6 @@
     span {
         text-decoration: underline;
     }
-}
-
-.button_bar {
-    display: flex;
-    justify-content: space-between;
-    font-family: $fontFamily;
-    img {
-        margin: 35px 0 0 91px;
-    }
-    button {
-        font-family: $fontFamily;
-        color: #ffffff;
-        width: 131px;
-        height: 36px;
-        margin: 44px 0 0 16px;
-        background-color: #ee3efe;
-        border: 1px solid #110038;
-        box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
-    }
-    button:hover {
-        padding: 2px;
-        border: 1px solid #110038;
-        outline: 1px #110038 dotted;
-        outline-offset: -6px;
-        background: #ce36db;
-        border: 1px solid #110038;
-        box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
-    }
-    .goDown {
-        font-family: $fontFamily;
-        margin-left: -4px;
-        width: 36px;
-        height: 36px;
-        border: 1px solid #110038;
-        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-    }
-    .special {
-        border: none;
-        background-color: #110038;
-        color: #ffffff;
-        margin-left: 16.5px;
-        margin-right: 75px;
-        box-shadow: none;
-        text-decoration: none;
-
-        span {
-            text-decoration: underline;
-        }
-    }
-    .special:hover {
-        outline: 1px #ffffff dotted;
-        outline-offset: 6px;
-    }
-    .special:active {
-        color: #ffffff65;
-        outline: none;
-    }
-}
-.dropdown {
-    position: relative;
-    display: inline-block;
 }
 
 .show {
@@ -171,33 +129,6 @@
     padding: 10px;
 }
 
-.day {
-    padding: 7px 56px 7px 16px;
-}
-
-.nigth {
-    padding: 7px 40px 7px 16px;
-    margin-top: 5px;
-}
-
-.nigth:hover {
-    color: #ffffff;
-    background: #2e32fb;
-    border: 1px solid rgba(51, 53, 143, 0.2);
-    box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
-    span {
-        text-decoration: underline;
-    }
-}
-.day:hover {
-    color: #ffffff;
-    background: #2e32fb;
-    border: 1px solid rgba(51, 53, 143, 0.2);
-    box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
-    span {
-        text-decoration: underline;
-    }
-}
 //Boton crear Guifos
 .btnGoCreate:hover {
     padding: 2px;
