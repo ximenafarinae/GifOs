@@ -21,7 +21,7 @@ function initRecorder() {
             hidden: 240
         });
     })
-    // .catch(error => console.log(error))
+    .catch(error => console.log(error))
 }
 
 function stopVideo() {
@@ -50,8 +50,6 @@ function cameraOff() {
             track.stop();
         })
     }
-
-
 }
 
 function volver() {
@@ -138,7 +136,7 @@ function getUrl() {
     fetch(gifByIdUrl + gifId + `?api_key=${apiKey}`)
         .then(response => response.json())
         .then((json) => {
-            result = JSON.stringify(json.data.url)
+            result = json.data.url
             console.log(result)
             let input = document.createElement('input')
             input.classList.add('transparent')
@@ -148,7 +146,7 @@ function getUrl() {
             range.selectNode(input);
             window.getSelection().addRange(range);
             try {
-                var resultado = document.execCommand('copy');
+                document.execCommand('copy')
             } catch (err) {
                 console.log('ERROR al intentar copiar la url');
             }
@@ -176,13 +174,14 @@ function darkTheme() {
         changeStylesheetNight()
     }
 }
-var i = 0
+
 function move(idBar) {
+    let i = 0
     if (i == 0) {
         i = 1;
-        var elem = document.getElementById(idBar);
-        var width = 1;
-        var id = setInterval(frame, 40);
+        let elem = document.getElementById(idBar);
+        let width = 1;
+        let id = setInterval(frame, 40);
         function frame() {
             if (width >= 100) {
                 clearInterval(id);

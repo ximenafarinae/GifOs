@@ -5,8 +5,6 @@ const randomUrl = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`;
 const searchSuggestionsUrl = `https://api.giphy.com/v1/tags/related/`;
 const randoms = ['kitty', 'dog', 'homero', 'dua lipa', 'mario', 'princess', 'cute', 'lol', 'dragon ball z', 'the office', 'michael scott', 'sailor moon', 'saint seiya', 'ranma']
 
-
-
 function irACrear() {
   document.location.href = 'crear_guifos.html'
 }
@@ -102,14 +100,11 @@ function crearContenidoTrends(trends) {
   }
 }
 
-
 function verMas() {
   let tag = localStorage.getItem('tag')
   document.getElementById('searchInput').value = tag
   search()
 }
-
-
 
 function initEvents() {
   // Close the dropdown menu if the user clicks outside of it
@@ -126,7 +121,7 @@ function initEvents() {
     }
   }
 
-  var input = document.getElementById("searchInput");
+  var input = document.getElementById("searchInput")
   let button = document.getElementById('btnSearch')
   input.addEventListener("input", function (event) {
     if (button.classList.contains('btnInactive')) {
@@ -138,7 +133,6 @@ function initEvents() {
     }
   })
 
-  var input = document.getElementById("searchInput");
   input.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
       search()
@@ -148,13 +142,7 @@ function initEvents() {
 }
 
 //Esta funcion llama a las funciones que contiene una vez que se carga el html
-(function () {
-  getDark()
-  getRandoms()
-  getTrends()
-  initEvents()
-})();
-
-
-
-
+getDark()
+getRandoms()
+getTrends()
+initEvents()

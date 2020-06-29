@@ -1,4 +1,3 @@
-
 function saveGifId(gifId) {
     let gifIds = JSON.parse(localStorage.getItem('gifIds'))
     gifIds.push(gifId)
@@ -43,4 +42,4 @@ function initSearchHistory() {
 }
 
 initSearchHistory()
-initGifIds();
+initGifIds()
