@@ -12,79 +12,78 @@
     <title>GifOs</title>
 </head>
 
-<body id="body">
-
+<body>
     <header>
         <div id="bar" class="bar">
             ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803
         </div>
+    </header>
+    <div class="main">
+        <section id="sectionSearch">
+            <div class="button_bar">
+                <a href="index.html"><img id="logo" src="assets/gifOF_logo.png" alt="Logo GifOs"></a>
 
-        <div class="button_bar">
-            <a href="index.html"><img id="logo" src="assets/gifOF_logo.png" alt="Logo GifOs"></a>
+                <div>
+                    <button onclick="irACrear()">Crear Guifos</button>
 
-            <div>
-                <button onclick="irACrear()">Crear Guifos</button>
+                    <div class="dropdown">
+                        <button onclick="dropBtn()">Elegir tema</button>
+                        <button onclick="dropBtn()" class="goDown">▼</button>
+                        <div id="themes" class="themeSelector">
+                            <a id="sailor" onclick="dayMode()" class="day"><span>S</span>ailor Day</a>
+                            <a id="night" onclick="nightMode()" class="nigth"><span>S</span>ailor Nigth</a>
+                        </div>
 
-                <div class="dropdown">
-                    <button onclick="dropBtn()">Elegir tema</button>
-                    <button onclick="dropBtn()" class="goDown">▼</button>
-                    <div id="themes" class="themeSelector">
-                        <a id="sailor" onclick="dayMode()" class="day"><span>S</span>ailor Day</a>
-                        <a id="night" onclick="nightMode()" class="nigth"><span>S</span>ailor Nigth</a>
                     </div>
+                    <a class="special" href="mis_guifos.html"><span>M</span>is Guifos</a>
 
                 </div>
-                <a class="special" href="mis_guifos.html"><span>M</span>is Guifos</a>
+
+            </div>
+            <div id="search" class="search">
+                <p id="pDark">Buscar</p>
+                <input id="searchInput" onInput="showSuggestions()" onkeyup="searchSuggestions()" type="text"
+                    placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+                <button id="btnSearch" class="btnInactive" onclick="search()"> <img id="lupa"
+                        src="assets/lupa_inactive.svg" alt="lupa"><span>Buscar</span></button>
+            </div>
+
+            <div id="showSearchSuggestions">
+                <div id="searchSuggestions"></div>
+            </div>
+            <div id="showHashtags">
 
             </div>
 
-        </div>
+        </section>
 
-    </header>
+        <section id="results">
 
-    <section id="sectionSearch">
-        <div id="search" class="search">
-            <p id="pDark">Buscar</p>
-            <input id="searchInput" onInput="showSuggestions()" onkeyup="searchSuggestions()" type="text"
-                placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
-            <button id="btnSearch" class="btnInactive" onclick="search()"> <img id="lupa" src="assets/lupa_inactive.svg"
-                    alt="lupa"><span>Buscar</span></button>
-        </div>
+            <h4 id="resultsTitle" class="sectionTitleR">Resultados de la busqueda:</h4>
+            <div id="resultContainer" class="resultContainer">
+            </div>
 
-        <div id="showSearchSuggestions">
-            <div id="searchSuggestions"></div>
-        </div>
-        <div id="showHashtags">
+        </section>
 
-        </div>
+        <section id="suggestions" class="sugestions">
 
-    </section>
+            <h4 class="sectionTitle">Hoy te sugerimos:</h4>
 
-    <section id="results">
-
-        <h4 id="resultsTitle" class="sectionTitleR">Resultados de la busqueda:</h4>
-        <div id="resultContainer" class="resultContainer">
-        </div>
-
-    </section>
-
-    <section id="suggestions" class="sugestions">
-
-        <h4 class="sectionTitle">Hoy te sugerimos:</h4>
-
-        <div id="sugest" class="wrapperSugestions">
+            <div id="sugest" class="wrapperSugestions">
 
 
-        </div>
-    </section>
+            </div>
+        </section>
 
 
-    <section id="trending" class="trending">
-        <h4 class="sectionTitle">Tendencias</h4>
-        <div id="trends" class="wrapperTrend">
+        <section id="trending" class="trending">
+            <h4 class="sectionTitle">Tendencias</h4>
+            <div id="trends" class="wrapperTrend">
 
-        </div>
-    </section>
+            </div>
+        </section>
+
+    </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
@@ -93,7 +92,7 @@
     <script src="js/local_storage.js"></script>
     <script src="js/search.js"></script>
 
-    
+
 </body>
 
 </html>

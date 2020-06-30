@@ -3,7 +3,10 @@
 }
 body {
     background-color: #fbeffa;
+}
+.main {
     display: grid;
+    justify-content: center;
 }
 
 $color-button: #f7c9f3;

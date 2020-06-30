@@ -2,8 +2,11 @@
   box-sizing: border-box; }
 
 body {
-  background-color: #fbeffa;
-  display: grid; }
+  background-color: #fbeffa; }
+
+.main {
+  display: grid;
+  justify-content: center; }
 
 .bar {
   background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
