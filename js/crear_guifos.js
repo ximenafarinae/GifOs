@@ -21,7 +21,7 @@ function initRecorder() {
             hidden: 240
         });
     })
-    .catch(error => console.log(error))
+        .catch(error => console.log(error))
 }
 
 function stopVideo() {
@@ -129,28 +129,27 @@ function cancelar() {
 }
 
 function getUrl() {
-    let gifId = getGifIds().pop()
-    if (gifId === "") {
+    let gifId = getGifIds().pop() //busco el ultimo id que se haya guardado en el localStorage.
+    if (gifId === "") { //Si el id no existe corta la ejecucion
         return
     }
-    fetch(gifByIdUrl + gifId + `?api_key=${apiKey}`)
+    fetch(gifByIdUrl + gifId + `?api_key=${apiKey}`) //si el id existe me hace un fetch al endopint de Giphy en donde puedo buscar los gifs por id
         .then(response => response.json())
         .then((json) => {
             result = json.data.url
-            console.log(result)
-            let input = document.createElement('input')
+            let input = document.createElement('input') // genero un input invisible para que ahi se guarde el valor del id
             input.classList.add('transparent')
             input.value = result
-            document.getElementById('captureSix').appendChild(input)
+            document.getElementById('captureSix').appendChild(input)// aca estoy seleccionando el input que genere
             var range = document.createRange();
             range.selectNode(input);
-            window.getSelection().addRange(range);
+            window.getSelection().addRange(range); // y a partir de aca uso algunos methods de JavaScript para copiar la url
             try {
                 document.execCommand('copy')
             } catch (err) {
                 console.log('ERROR al intentar copiar la url');
             }
-            window.getSelection().removeAllRanges()
+            window.getSelection().removeAllRanges() // aca vuelvo todo a cero.
         })
         .catch((err) => {
             console.log('ERROR al intentar copiar la url');
